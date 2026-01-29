@@ -1,0 +1,44 @@
+{
+  "name": "foundryvtt-module-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/module.js",
+  "scripts": {
+    "build": "node build.mjs",
+    "build:prod": "NODE_ENV=production node build.mjs",
+    "build:types": "npx tsc --declaration --emitDeclarationOnly --declarationDir types",
+    "typedoc": "npx typedoc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unarekin/FoundryVTT-Module-Template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "types": "./types/module.d.ts",
+  "bugs": {
+    "url": "https://github.com/Unarekin/FoundryVTT-Module-Template/issues"
+  },
+  "homepage": "https://github.com/Unarekin/FoundryVTT-Module-Template#readme",
+  "devDependencies": {
+    "@eslint/js": "^9.11.0",
+    "@foundryvtt/foundryvtt-cli": "^1.1.0",
+    "deepmerge-ts": "^7.1.5",
+    "esbuild": "^0.25.5",
+    "esbuild-copy-static-files": "^0.1.0",
+    "esbuild-node-externals": "^1.18.0",
+    "esbuild-plugin-clean": "^1.0.1",
+    "esbuild-plugin-json-merge": "^0.1.0",
+    "esbuild-plugin-noexternal": "^0.1.6",
+    "esbuild-sass-plugin": "^3.3.1",
+    "eslint": "^9.11.0",
+    "fvtt-types": "github:League-of-Foundry-Developers/foundry-vtt-types#main",
+    "typedoc": "^0.26.10",
+    "typedoc-plugin-rename-defaults": "^0.7.1",
+    "typescript": "<5.6.0",
+    "typescript-eslint": "^8.6.0",
+    "yocto-spinner": "^0.2.3"
+  }
+}
