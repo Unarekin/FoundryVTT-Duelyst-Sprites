@@ -1,8 +1,3 @@
-- [Duelyst Sprites](#duelyst-sprites)
-  - [Actor Creator](#actor-creator)
-- [License](#license)
-
-
 # Duelyst Sprites
 
 This module makes using assets from [Duelyst](https://github.com/open-duelyst/duelyst) simple and easy.
@@ -29,3 +24,4 @@ The contents of this project, aside from the assets from [Duelyst](https://githu
 [Duelyst](https://github.com/open-duelyst/duelyst) and its assets are licensed under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license
 
 This module includes images, videos, sounds, etc. that are modified versions of the [Duelyst](https://github.com/open-duelyst/duelyst) assets -- they have been scaled up in size, and converted to formats usable in Foundry.  These assets are released under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license.  You will find a copy of the license in the folders where these assets are contained.
+
