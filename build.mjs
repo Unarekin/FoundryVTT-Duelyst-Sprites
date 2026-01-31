@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+/* eslint-disable @typescript-eslint/no-unsafe-member-access */
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
 import { build } from "esbuild";
 import { clean as cleanPlugin } from "esbuild-plugin-clean";
@@ -13,7 +15,6 @@ import yoctoSpinner from "yocto-spinner";
 import { ESLint } from "eslint";
 import externalizeAllPackagesExcept from "esbuild-plugin-noexternal";
 import { compilePack } from "@foundryvtt/foundryvtt-cli";
-import ts from "typescript";
 
 /** Paths */
 const SRC_PATH = "./src";
@@ -21,24 +22,20 @@ const LANG_PATH = path.join(SRC_PATH, "languages");
 const OUT_PATH = "./dist";
 const STYLE_PATH = path.join(SRC_PATH, "styles");
 const TEMPLATE_PATH = path.join(SRC_PATH, "templates");
+const MACRO_PACK_PATH = path.join(SRC_PATH, "packs/duelyst-sprites-macros");
 
 // Import module.json for some config options
 // import moduleConfig from "./module.json" with { type: "json" };
 const moduleConfig = JSON.parse(
-  (await fs.readFile("./module.json")).toString()
-);
-
-const packageConfig = JSON.parse(
-  (await fs.readFile("./package.json")).toString()
+  (await fs.readFile("./module.json")).toString(),
 );
 
 // Constants to be inserted into process.env during build
 const __DEV__ = process.env.NODE_ENV !== "production";
 const __MODULE_TITLE__ = moduleConfig.title;
 const __MODULE_ID__ = moduleConfig.id;
-const __MODULE_VERSION__ = packageConfig.version;
+const __MODULE_VERSION__ = moduleConfig.version;
 
-const start = Date.now();
 let spinner = null;
 
 if (!process.argv.slice(2).includes("--no-lint")) {
@@ -54,23 +51,25 @@ if (!process.argv.slice(2).includes("--no-lint")) {
   const lintResults = await linter.lintFiles(["src/**.ts", "src/*/**.ts"]);
   await ESLint.outputFixes(lintResults);
 
-  let formatter = await linter.loadFormatter("html");
-  await fs.writeFile("./lint-report.html", formatter.format(lintResults));
+  if (!process.env.GITHUB_ACTIONS) {
+    const formatter = await linter.loadFormatter("html");
+    await fs.writeFile("./lint-report.html", formatter.format(lintResults));
+  }
 
-  const hasErrors = lintResults.findIndex((result) => result.errorCount) !== -1;
+  const hasErrors = lintResults.findIndex(result => result.errorCount) !== -1;
   if (hasErrors) {
     if (spinner) spinner.error("Linting errors found!");
-    formatter = await linter.loadFormatter("stylish");
+    const formatter = await linter.loadFormatter("stylish");
     console.log(formatter.format(lintResults));
-    process.exit();
+    process.exit(1);
   } else {
     if (spinner)
       spinner.success(
-        `Linting passed in ${((Date.now() - start) / 1000).toFixed(2)}s`
+        `Linting passed in ${((Date.now() - lintStart) / 1000).toFixed(2)}s`,
       );
     else
       console.log(
-        `Linting passed in ${((Date.now() - start) / 1000).toFixed(2)}s`
+        `Linting passed in ${((Date.now() - lintStart) / 1000).toFixed(2)}s`,
       );
   }
 }
@@ -88,7 +87,7 @@ const jsonMergers = (
       jsonMerge({
         entryPoints: [path.join(LANG_PATH, curr.name, "*.json")],
         outfile: path.join("languages", `${curr.name}.json`),
-        merge: (items) => deepmerge(...items),
+        merge: items => deepmerge(...items),
       }),
     ];
   else return prev;
@@ -101,13 +100,11 @@ const STATIC_FILES = [
   { src: "./README.md", dest: "README.md" },
   { src: TEMPLATE_PATH, dest: "templates" },
   { src: path.join(SRC_PATH, "assets"), dest: "assets" },
-  { src: path.join(SRC_PATH, "vendor"), dest: "vendor" },
 ];
 
 const copyPlugins = [];
 for (const file of STATIC_FILES) {
   try {
-    const stat = await fs.stat(file.src);
     copyPlugins.push(
       copyPlugin({
         src: file.src,
@@ -115,10 +112,15 @@ for (const file of STATIC_FILES) {
         dereference: true,
         errorOnExists: false,
         preserveTimestamps: true,
-      })
+      }),
     );
   } catch (err) {
-    if (err.code !== "ENOENT") throw err;
+    // ignore ENOENT, throw others
+    if (err.code === "ENOENT") {
+      console.warn(`Attempting to copy non-existent file: ${file.src}`);
+    } else {
+      throw err;
+    }
   }
 }
 
@@ -152,6 +154,7 @@ const buildResults = await build({
     ".frag": "text",
     ".vert": "text",
   },
+  metafile: __DEV__,
   plugins: [
     nodeExternalsPlugin(),
     cleanPlugin({ patterns: "./dist/**" }),
@@ -163,109 +166,107 @@ const buildResults = await build({
   ],
 });
 
+if (buildResults.metafile) {
+  await fs.writeFile(
+    "./esbuild.meta.json",
+    JSON.stringify(buildResults.metafile, null, 2),
+  );
+}
+
 if (buildResults.errors.length) {
   if (spinner) spinner.error("Build failed!");
   else console.error("Build failed!");
   console.error(buildResults.errors);
-  process.exit();
+  process.exit(1);
 } else {
   if (spinner)
     spinner.success(
-      `Build completed in ${((Date.now() - buildStart) / 1000).toFixed(2)}s`
+      `Build completed in ${((Date.now() - buildStart) / 1000).toFixed(2)}s`,
     );
   else
     console.log(
-      `Build completed in ${((Date.now() - buildStart) / 1000).toFixed(2)}s`
+      `Build completed in ${((Date.now() - buildStart) / 1000).toFixed(2)}s`,
     );
   // if (buildResults.warnings.length) console.warn(buildResults.warnings);
-}
 
-// Types
-if (!__DEV__ || (__DEV__ && !process.argv.slice(2).includes("--no-types"))) {
-  const typeStart = Date.now();
+  const macroStart = Date.now();
   if (!process.env.GITHUB_ACTIONS)
-    spinner = yoctoSpinner({ text: "Generating type declarations..." }).start();
-  else console.log("Generating type declarations...");
+    spinner = yoctoSpinner({ text: "Building macros..." }).start();
+  else console.log("Building macros...");
+
   try {
-    await fs.rm("./types", { recursive: true, force: true });
+    const files = await fs.readdir(path.join(SRC_PATH, "macros"));
+    const macroFiles = await fs.readdir(MACRO_PACK_PATH);
 
-    const currentDir = process.cwd();
-    const configFile = ts.findConfigFile(
-      currentDir,
-      ts.sys.fileExists,
-      "tsconfig.json"
-    );
-    if (!configFile) throw new Error("tsconfig.json not found");
-    const { config } = ts.readConfigFile(configFile, ts.sys.readFile);
+    for (const file of files) {
+      const content = (
+        await fs.readFile(path.join(SRC_PATH, "macros", file))
+      ).toString();
 
-    config.compilerOptions.declaration = true;
-    config.compilerOptions.declarationDir = "types";
-    config.compilerOptions.emitDeclarationOnly = true;
-    // config.compilerOptions.outFile = "./dist/index.d.ts";
+      const macroFilePattern = `macros_${path
+        .basename(file, path.extname(file))
+        .replaceAll(" ", "_")}`;
 
-    const { options, fileNames, errors } = ts.parseJsonConfigFileContent(
-      config,
-      ts.sys,
-      currentDir
-    );
-    const program = ts.createProgram({
-      options,
-      rootNames: fileNames,
-      configFileParsingDiagnostics: errors,
-    });
-    const { diagnostics, emitSkipped } = program.emit();
-    const allDiagnostics = ts
-      .getPreEmitDiagnostics(program)
-      .concat(diagnostics, errors);
+      const macroFile = macroFiles.find(macro =>
+        macro.startsWith(macroFilePattern),
+      );
+      if (!macroFile)
+        throw new Error(`Unable to locate macro file for ${file}`);
+
+      const macroFileContent = (
+        await fs.readFile(path.join(MACRO_PACK_PATH, macroFile))
+      ).toString();
+
+      const macroFileJSON = JSON.parse(macroFileContent);
+      macroFileJSON.command = `${content}`;
+      await fs.writeFile(
+        path.join(MACRO_PACK_PATH, macroFile),
+        JSON.stringify(macroFileJSON, null, 2),
+      );
+    }
 
     if (spinner)
       spinner.success(
-        `Type declarations emitted in ${(
-          (Date.now() - buildStart) /
-          1000
-        ).toFixed(2)}s`
+        `Macros built in ${((Date.now() - macroStart) / 1000).toFixed(2)}s`,
       );
     else
       console.log(
-        `Type declarations emitted in ${(
-          (Date.now() - buildStart) /
-          1000
-        ).toFixed(2)}s`
+        `Macros built in ${((Date.now() - macroStart) / 1000).toFixed(2)}s`,
       );
   } catch (err) {
-    if (spinner) spinner.error("Type declaration generation failed!");
-    else console.error("Type declaration generation failed!");
+    if (spinner) spinner.error("Building macros failed!");
+    else console.error("Building macros failed!");
     console.error(err);
-    process.exit();
+    process.exit(1);
   }
-}
 
-// Pack compendia
-const packStart = Date.now();
-if (!process.env.GITHUB_ACTIONS)
-  spinner = yoctoSpinner({ text: "Packing compendia..." }).start();
-else console.log("Packing compendia...");
-try {
-  // Build compendia
-  const packs = await fs.readdir(path.join(SRC_PATH, "packs"));
-  for (const pack of packs) {
-    if (pack === ".gitattributes") continue;
-    await compilePack(
-      path.join(SRC_PATH, `packs`, pack),
-      path.join(OUT_PATH, "packs", pack),
-      { yaml: false }
-    );
+  const packStart = Date.now();
+  if (!process.env.GITHUB_ACTIONS)
+    spinner = yoctoSpinner({ text: "Packing compendia..." }).start();
+  else console.log("Packing compendia...");
+  try {
+    // Build compendia
+    const packs = await fs.readdir(path.join(SRC_PATH, "packs"));
+    for (const pack of packs) {
+      if (pack === ".gitattributes") continue;
+      await compilePack(
+        path.join(SRC_PATH, `packs`, pack),
+        path.join(OUT_PATH, "packs", pack),
+        { yaml: false },
+      );
+    }
+    if (spinner)
+      spinner.success(
+        `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`,
+      );
+    else
+      console.log(
+        `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`,
+      );
+  } catch (err) {
+    if (spinner) spinner.error("Build failed!");
+    else console.error("Build failed!");
+    console.error(err);
+    process.exit(1);
   }
-  if (spinner)
-    spinner.success(
-      `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
-    );
-  else
-    console.log(
-      `Compendia packed in ${((Date.now() - packStart) / 1000).toFixed(2)}s`
-    );
-} catch (err) {
-  if (spinner) spinner.error("Build failed!");
-  else console.error("Build failed!");
-  console.error(err);
 }

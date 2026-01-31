@@ -1,0 +1,82 @@
+{
+  "inputs": {
+    "src/applications/ActorCreator.ts": {
+      "bytes": 7097,
+      "imports": [
+        {
+          "path": "./types",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
+    "src/applications/index.ts": {
+      "bytes": 32,
+      "imports": [
+        {
+          "path": "src/applications/ActorCreator.ts",
+          "kind": "import-statement",
+          "original": "./ActorCreator"
+        }
+      ],
+      "format": "esm"
+    },
+    "src/module.ts": {
+      "bytes": 172,
+      "imports": [
+        {
+          "path": "src/applications/index.ts",
+          "kind": "import-statement",
+          "original": "./applications"
+        }
+      ],
+      "format": "cjs"
+    },
+    "src/styles/module.scss": {
+      "bytes": 449,
+      "imports": []
+    }
+  },
+  "outputs": {
+    "dist/module.js.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 11864
+    },
+    "dist/module.js": {
+      "imports": [],
+      "exports": [],
+      "entryPoint": "src/module.ts",
+      "inputs": {
+        "src/applications/ActorCreator.ts": {
+          "bytesInOutput": 6848
+        },
+        "src/applications/index.ts": {
+          "bytesInOutput": 129
+        },
+        "src/module.ts": {
+          "bytesInOutput": 217
+        }
+      },
+      "bytes": 7712
+    },
+    "dist/styles/module.css.map": {
+      "imports": [],
+      "exports": [],
+      "inputs": {},
+      "bytes": 215
+    },
+    "dist/styles/module.css": {
+      "imports": [],
+      "entryPoint": "src/styles/module.scss",
+      "inputs": {
+        "src/styles/module.scss": {
+          "bytesInOutput": 58
+        }
+      },
+      "bytes": 126
+    }
+  }
+}

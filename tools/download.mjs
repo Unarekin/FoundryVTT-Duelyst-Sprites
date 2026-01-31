@@ -12,6 +12,16 @@ import { formatBytes } from "./functions.mjs";
 const PROGRESS_COMPLETE = "█";
 const PROGRESS_INCOMPLETE = "░";
 
+async function writeFile(entry, destination) {
+  return new Promise((resolve, reject) => {
+    entry
+      .stream()
+      .pipe(origFS.createWriteStream(destination))
+      .on("error", reject)
+      .on("close", resolve);
+  });
+}
+
 export async function downloadFile(url, destination) {
   return new Promise(async (resolve, reject) => {
     try {
@@ -80,7 +90,11 @@ export async function extractFile(file, destination) {
   const files = directory.files.filter(file =>
     file.path.startsWith("duelyst-main/app/resources"),
   );
+
   const totalData = files.reduce((prev, curr) => prev + curr.compressedSize, 0);
+
+  const license = directory.files.find(file => file.path.endsWith("LICENSE"));
+  if (license) await writeFile(license, path.join(destination, "LICENSE"));
 
   const progress = new ProgressBar(
     `Extracting :bar :extractedBytes / :totalBytes (:etas)`,
@@ -105,19 +119,11 @@ export async function extractFile(file, destination) {
     if (file.type === "Directory") {
       await fs.mkdir(outPath, { recursive: true });
     } else {
-      await new Promise((resolve, reject) => {
-        file
-          .stream()
-          .pipe(origFS.createWriteStream(outPath))
-          .on("error", reject)
-          .on("close", () => {
-            extractedBytes += file.compressedSize;
-            progress.tick(file.compressedSize, {
-              extractedBytes: formatBytes(extractedBytes),
-              totalBytes: formatBytes(totalData),
-            });
-            resolve();
-          });
+      await writeFile(file, outPath);
+      extractedBytes += file.compressedSize;
+      progress.tick(file.compressedSize, {
+        extractedBytes: formatBytes(extractedBytes),
+        totalBytes: formatBytes(totalData),
       });
     }
   }

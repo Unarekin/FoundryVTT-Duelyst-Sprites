@@ -1,13 +1,13 @@
 {
-  "id": "module-template",
-  "title": "Module Template",
-  "description": "A module template, this should have been changed",
+  "id": "duelyst-sprites",
+  "title": "Duelyst Sprites",
+  "description": "A module that provides assets from the open source game Duelyst",
   "version": "#{VERSION}#",
   "library": "false",
   "compatibility": {
-    "minimum": 13,
+    "minimum": 12,
     "verified": 13,
-    "maximum": 13
+    "maximum": 14
   },
   "authors": [
     {
@@ -16,7 +16,7 @@
       "discord": "unarekin"
     }
   ],
-  "socket": true,
+  "socket": false,
   "relationships": {
     "systems": [],
     "requires": []
@@ -24,6 +24,14 @@
   "esmodules": ["module.js"],
   "scripts": [],
   "styles": ["styles/module.css"],
+  "packs": [
+    {
+      "label": "Duelyst Sprites Macros",
+      "type": "Macro",
+      "name": "duelyst-sprites-macros",
+      "path": "packs/duelyst-sprites-macros"
+    }
+  ],
   "languages": [
     {
       "lang": "en",

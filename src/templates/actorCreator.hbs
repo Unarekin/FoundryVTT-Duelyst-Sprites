@@ -1,0 +1,76 @@
+<div class="duelyst-actor-creator">
+  <p class="hint">{{localize "DUELYSTSPRITES.ACTORCREATOR.DESCRIPTION"}}</p>
+
+  <div class="flexrow">
+    <div class="flexcol flex1">
+      <div class="flex0">
+        <div class="form-group">
+          <label for="{{idPrefix}}-preset">{{localize
+              "DUELYSTSPRITES.ACTORCREATOR.PRESET.LABEL"
+            }}</label>
+          <select id="{{idPrefix}}-preset" name="preset" required>
+            <option></option>
+            {{selectOptions actorSelect selected=actorId}}
+          </select>
+
+          <p class="hint">{{localize
+              "DUELYSTSPRITES.ACTORCREATOR.PRESET.HINT"
+            }}</p>
+        </div>
+
+        <div class="form-group">
+          <label for="{{idPrefix}}-type">{{localize
+              "DUELYSTSPRITES.ACTORCREATOR.ACTORTYPE.LABEL"
+            }}</label>
+          <select id="{{idPrefix}}-type" name="type" required>
+            <option></option>
+            {{selectOptions actorTypeSelect selected=actorType}}
+          </select>
+          <p class="hint"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="{{idPrefix}}-name">{{localize
+              "DUELYSTSPRITES.ACTORCREATOR.ACTORNAME.LABEL"
+            }}</label>
+          <input
+            type="text"
+            id="{{idPrefix}}-name"
+            name="name"
+            value="{{actorName}}"
+            required
+          />
+          <p class="hint"></p>
+        </div>
+
+        <div class="form-group">
+          <label for="{{idPrefix}}-folder">{{localize
+              "DOCUMENT.Folder"
+            }}</label>
+          <select name="folder" id="{{idPrefix}}-folder">
+            <option></option>
+            {{selectOptions folderSelect selected=folder}}
+          </select>
+        </div>
+      </div>
+      <div class="flex1"></div>
+    </div>
+    <div class="flexcol flex0">
+      <div class="duelyst-actor-creator__preview-image flex0">
+        {{! <img data-role="actor-preview" /> }}
+        <video data-role="actor-preview" autoplay="true" loop="true"></video>
+      </div>
+      <div class="flex1"></div>
+    </div>
+  </div>
+  <p
+    class="hint"
+    data-role="sprite-animation-hint"
+    style="display:none"
+  >{{{localize "DUELYSTSPRITES.ACTORCREATOR.HASSPRITEANIMATION"}}}</p>
+  <p
+    class="hint"
+    data-role="theatre-inserts-hint"
+    style="display:none"
+  >{{{localize "DUELYSTSPRITES.ACTORCREATOR.HASTHEATREINSERT"}}}</p>
+</div>
