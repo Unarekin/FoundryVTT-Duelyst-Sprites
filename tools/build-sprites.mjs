@@ -4,16 +4,21 @@ import { promises as fs } from "fs";
 import { downloadFile, extractFile } from "./download.mjs";
 import { fileExists } from "./functions.mjs";
 import { parsePlistDirectory } from "./plist.mjs";
-
-const GITHUB_URL =
-  "https://github.com/open-duelyst/duelyst/archive/refs/heads/main.zip";
-
-const CARDDATA_URL =
-  "https://raw.githubusercontent.com/kevicency/decklyst/refs/heads/main/src/data/carddata.json";
-const DOWNLOAD_DIR = path.join(import.meta.dirname, "./downloads");
-const ZIP_PATH = path.join(DOWNLOAD_DIR, path.basename(GITHUB_URL));
+import { postProcessPlist } from "./units.mjs";
+import { ASSET_PATH, DOWNLOAD_DIR, DATA } from "./consts.mjs";
 
 try {
+  try {
+    const config = JSON.parse(
+      (
+        await fs.readFile(
+          path.join(import.meta.dirname, "..", "src", "index.json"),
+        )
+      ).toString(),
+    );
+    if (config) Object.assign(DATA, config);
+  } catch (err) {}
+
   // await fs.rm(path.join(DOWNLOAD_DIR, "duelyst-main"), {
   //   force: true,
   //   recursive: true,
@@ -26,9 +31,10 @@ try {
 
   // await extractFile(ZIP_PATH, DOWNLOAD_DIR);
 
+  console.log("Processing plists...");
   await parsePlistDirectory(
     path.join(DOWNLOAD_DIR, "duelyst-main", "units"),
-    "Units",
+    postProcessPlist,
   );
 } catch (err) {
   console.error(err);

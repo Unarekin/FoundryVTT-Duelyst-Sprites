@@ -1,0 +1,478 @@
+{
+  "frames": {
+    "boss_andromeda_attack_000.png": {
+      "frame": "{{303,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_001.png": {
+      "frame": "{{606,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_002.png": {
+      "frame": "{{606,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_003.png": {
+      "frame": "{{505,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_004.png": {
+      "frame": "{{505,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_005.png": {
+      "frame": "{{505,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_006.png": {
+      "frame": "{{505,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_007.png": {
+      "frame": "{{505,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_008.png": {
+      "frame": "{{505,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_009.png": {
+      "frame": "{{505,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_010.png": {
+      "frame": "{{505,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_011.png": {
+      "frame": "{{505,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_012.png": {
+      "frame": "{{505,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_013.png": {
+      "frame": "{{404,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_014.png": {
+      "frame": "{{404,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_015.png": {
+      "frame": "{{404,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_016.png": {
+      "frame": "{{404,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_017.png": {
+      "frame": "{{404,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_018.png": {
+      "frame": "{{404,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_019.png": {
+      "frame": "{{404,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_020.png": {
+      "frame": "{{404,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_021.png": {
+      "frame": "{{404,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_attack_022.png": {
+      "frame": "{{404,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_000.png": {
+      "frame": "{{303,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_001.png": {
+      "frame": "{{303,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_002.png": {
+      "frame": "{{303,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_003.png": {
+      "frame": "{{303,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_004.png": {
+      "frame": "{{303,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_005.png": {
+      "frame": "{{303,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_006.png": {
+      "frame": "{{303,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_007.png": {
+      "frame": "{{303,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_008.png": {
+      "frame": "{{303,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_breathing_009.png": {
+      "frame": "{{606,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_000.png": {
+      "frame": "{{303,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_001.png": {
+      "frame": "{{202,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_002.png": {
+      "frame": "{{202,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_003.png": {
+      "frame": "{{202,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_004.png": {
+      "frame": "{{202,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_005.png": {
+      "frame": "{{202,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_006.png": {
+      "frame": "{{202,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_007.png": {
+      "frame": "{{202,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_008.png": {
+      "frame": "{{202,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_009.png": {
+      "frame": "{{202,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_010.png": {
+      "frame": "{{202,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_011.png": {
+      "frame": "{{101,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_death_012.png": {
+      "frame": "{{101,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_hit_000.png": {
+      "frame": "{{303,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_hit_001.png": {
+      "frame": "{{202,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_hit_002.png": {
+      "frame": "{{202,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_000.png": {
+      "frame": "{{101,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_001.png": {
+      "frame": "{{101,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_002.png": {
+      "frame": "{{101,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_003.png": {
+      "frame": "{{101,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_004.png": {
+      "frame": "{{101,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_005.png": {
+      "frame": "{{101,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_006.png": {
+      "frame": "{{101,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_007.png": {
+      "frame": "{{101,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_008.png": {
+      "frame": "{{0,909},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_idle_009.png": {
+      "frame": "{{0,808},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_000.png": {
+      "frame": "{{0,707},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_001.png": {
+      "frame": "{{0,606},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_002.png": {
+      "frame": "{{0,505},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_003.png": {
+      "frame": "{{0,404},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_004.png": {
+      "frame": "{{0,303},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_005.png": {
+      "frame": "{{0,202},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_006.png": {
+      "frame": "{{0,101},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    },
+    "boss_andromeda_run_007.png": {
+      "frame": "{{0,0},{100,100}}",
+      "offset": "{0,0}",
+      "rotated": false,
+      "sourceColorRect": "{{0,0},{100,100}}",
+      "sourceSize": "{100,100}"
+    }
+  },
+  "metadata": {
+    "format": 2,
+    "size": "{1024,1024}",
+    "textureFileName": "boss_andromeda.png"
+  }
+}

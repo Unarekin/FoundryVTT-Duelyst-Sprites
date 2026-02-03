@@ -22,13 +22,29 @@
       ],
       "format": "esm"
     },
+    "src/index.json": {
+      "bytes": 1244797,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
     "src/module.ts": {
-      "bytes": 172,
+      "bytes": 304,
       "imports": [
         {
           "path": "src/applications/index.ts",
           "kind": "import-statement",
           "original": "./applications"
+        },
+        {
+          "path": "src/index.json",
+          "kind": "import-statement",
+          "original": "./index.json",
+          "with": {
+            "type": "json"
+          }
         }
       ],
       "format": "cjs"
@@ -43,7 +59,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 11864
+      "bytes": 1998029
     },
     "dist/module.js": {
       "imports": [],
@@ -56,11 +72,14 @@
         "src/applications/index.ts": {
           "bytesInOutput": 129
         },
+        "src/index.json": {
+          "bytesInOutput": 1436648
+        },
         "src/module.ts": {
-          "bytesInOutput": 217
+          "bytesInOutput": 284
         }
       },
-      "bytes": 7712
+      "bytes": 1444448
     },
     "dist/styles/module.css.map": {
       "imports": [],
