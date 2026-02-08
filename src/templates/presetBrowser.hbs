@@ -1,0 +1,56 @@
+<section>
+  <section class="duelyst-preset-browser">
+    <div class="duelyst-preset-browser__sidebar">
+      <label>
+        <input
+          type="search"
+          placeholder="Search..."
+          name="search"
+          data-role="search"
+          value="{{searchTerm}}"
+        />
+      </label>
+      <fieldset>
+        <legend>{{localize "DUELYSTSPRITES.FACTIONS.LABEL"}}</legend>
+        {{#each factions as |faction|}}
+          <label>
+            <input
+              type="checkbox"
+              data-filter-type="faction"
+              data-filter-value="{{faction.id}}"
+              name="faction-{{faction.id}}"
+              {{checked filterEnabled}}
+            />
+            {{faction.name}}
+          </label>
+        {{/each}}
+      </fieldset>
+      <fieldset>
+        <legend>{{localize "DUELYSTSPRITES.UNITTYPES.LABEL"}}</legend>
+        {{#each unitTypes as |type|}}
+        <label>
+          <input type="checkbox" data-filter-type="type" data-filter-value="{{type.value}}" {{checked type.filterEnabled}} name="type-{{type.value}}">
+          {{localize type.label}}
+        </label>
+        {{/each}}
+    </div>
+
+    <fieldset style="padding:0">
+      <div class="duelyst-preset-browser__item-list">
+        {{#each units as |unit|}}
+          <div
+            class="duelyst-preset-browser__preset-item-preview{{#if unit.selected }} duelyst-preset-browser__preset-item-preview--selected{{/if}}"
+            style="background-image:url({{unit.src}})"
+            data-action="selectPreset"
+            data-tooltip="{{{unit.tooltip}}}"
+            data-tooltip-direction="RIGHT"
+            data-role="select-preset"
+            data-preset="{{unit.id}}"
+          >
+            <h4>{{unit.label}}</h4>
+          </div>
+        {{/each}}
+      </div>
+    </fieldset>
+  </section>
+</section>

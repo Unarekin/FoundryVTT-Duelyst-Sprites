@@ -79,108 +79,114 @@ export async function parsePlistDirectory(dir, postFunc) {
 async function parsePlist(file, outDir, postFunc, multiBar, overallBar) {
   const fileName = path.basename(file, path.extname(file));
   const actualOutputPath = path.join(outDir, fileName);
+  let fileBar;
+  if (
+    process.argv.includes("--force") ||
+    !(await fileExists(actualOutputPath))
+  ) {
+    const plist = PList.parse((await fs.readFile(file)).toString());
 
-  if (!process.argv.includes("--force") && (await fileExists(actualOutputPath)))
-    return;
+    const animationFrames = Object.entries(plist.frames);
 
-  const plist = PList.parse((await fs.readFile(file)).toString());
+    const animationNames = Object.keys(plist.frames)
+      .map(name => {
+        const fileName = path.basename(file, path.extname(file));
+        const split = name.replace(`${fileName}_`, "").split("_");
+        split.pop();
+        return split.join("_");
+      })
+      .filter((name, i, arr) => arr.indexOf(name) === i);
 
-  const animationFrames = Object.entries(plist.frames);
-
-  const animationNames = Object.keys(plist.frames)
-    .map(name => {
-      const fileName = path.basename(file, path.extname(file));
-      const split = name.replace(`${fileName}_`, "").split("_");
-      split.pop();
-      return split.join("_");
-    })
-    .filter((name, i, arr) => arr.indexOf(name) === i);
-
-  const fileBar = multiBar.create(
-    animationFrames.length + animationNames.length + 3,
-    0,
-    {
-      file: fitLabel(fileName, FILE_DISPLAY_LENGTH),
-      task: fitLabel("Preparing...", 20),
-    },
-  );
-
-  fileBar.update({ task: fitLabel("Loading texture...", FILE_DISPLAY_LENGTH) });
-  const textureFile = plist.metadata.textureFileName;
-  const spriteSheet = await Jimp.read(
-    path.join(path.dirname(file), textureFile),
-  );
-
-  fileBar.update({ task: fitLabel("Slicing...", FILE_DISPLAY_LENGTH) });
-
-  const frames = Object.entries(plist.frames);
-
-  await fs.mkdir(path.join(actualOutputPath, "frames"), { recursive: true });
-
-  for (const [name, frame] of frames) {
-    const clone = spriteSheet.clone();
-    const [x, y, w, h] = extractFrameCoords(frame.frame);
-    clone.crop({ x, y, w, h });
-    clone.resize({ w: 1024, mode: ResizeStrategy.NEAREST_NEIGHBOR });
-    const outPath = path.join(actualOutputPath, "frames", name);
-    await clone.write(outPath);
-
-    fileBar.increment();
-  }
-
-  fileBar.update({ task: "Creating idle.webp..." });
-  await convertFfmpeg(
-    path.join(actualOutputPath, "frames", `${fileName}_idle_%03d.png`),
-    path.join(actualOutputPath, "idle.webp"),
-    ["-r 10"],
-    ["-loop 0"],
-  );
-  fileBar.increment();
-
-  fileBar.update({ task: "Creating idle.gif..." });
-  const gifFiles = (
-    await fs.readdir(path.join(actualOutputPath, "frames"))
-  ).filter(file => file.includes("_idle_"));
-  const gifFrames = [];
-  for (const file of gifFiles) {
-    const image = await Jimp.read(path.join(actualOutputPath, "frames", file));
-    const gifFrame = new GifFrame(new BitmapImage(image.bitmap), {
-      delayCentisecs: 10,
-    });
-    gifFrames.push(gifFrame);
-  }
-  await GifUtil.write(path.join(actualOutputPath, "idle.gif"), gifFrames, {
-    loops: 0,
-  });
-  fileBar.increment();
-
-  fileBar.update({ task: "Converting WEBM..." });
-  for (const animation of animationNames) {
-    await convertFfmpeg(
-      path.join(
-        actualOutputPath,
-        "frames",
-        `${path.basename(file, path.extname(file))}_${animation}_%03d.png`,
-      ),
-      path.join(actualOutputPath, `${animation}.webm`),
-      ["-r 10", "-hwaccel auto"],
-      ["-vcodec libvpx-vp9"],
+    fileBar = multiBar.create(
+      animationFrames.length + animationNames.length + 3,
+      0,
+      {
+        file: fitLabel(fileName, FILE_DISPLAY_LENGTH),
+        task: fitLabel("Preparing...", 20),
+      },
     );
 
-    fileBar.increment();
-  }
+    fileBar.update({
+      task: fitLabel("Loading texture...", FILE_DISPLAY_LENGTH),
+    });
+    const textureFile = plist.metadata.textureFileName;
+    const spriteSheet = await Jimp.read(
+      path.join(path.dirname(file), textureFile),
+    );
 
+    fileBar.update({ task: fitLabel("Slicing...", FILE_DISPLAY_LENGTH) });
+
+    const frames = Object.entries(plist.frames);
+
+    await fs.mkdir(path.join(actualOutputPath, "frames"), { recursive: true });
+
+    for (const [name, frame] of frames) {
+      const clone = spriteSheet.clone();
+      const [x, y, w, h] = extractFrameCoords(frame.frame);
+      clone.crop({ x, y, w, h });
+      clone.resize({ w: 1024, mode: ResizeStrategy.NEAREST_NEIGHBOR });
+      const outPath = path.join(actualOutputPath, "frames", name);
+      await clone.write(outPath);
+
+      fileBar.increment();
+    }
+
+    fileBar.update({ task: "Creating idle.webp..." });
+    await convertFfmpeg(
+      path.join(actualOutputPath, "frames", `${fileName}_idle_%03d.png`),
+      path.join(actualOutputPath, "idle.webp"),
+      ["-r 10"],
+      ["-loop 0"],
+    );
+    fileBar.increment();
+
+    fileBar.update({ task: "Creating idle.gif..." });
+    const gifFiles = (
+      await fs.readdir(path.join(actualOutputPath, "frames"))
+    ).filter(file => file.includes("_idle_"));
+    const gifFrames = [];
+    for (const file of gifFiles) {
+      const image = await Jimp.read(
+        path.join(actualOutputPath, "frames", file),
+      );
+      const gifFrame = new GifFrame(new BitmapImage(image.bitmap), {
+        delayCentisecs: 10,
+      });
+      gifFrames.push(gifFrame);
+    }
+    await GifUtil.write(path.join(actualOutputPath, "idle.gif"), gifFrames, {
+      loops: 0,
+    });
+    fileBar.increment();
+
+    fileBar.update({ task: "Converting WEBM..." });
+    for (const animation of animationNames) {
+      await convertFfmpeg(
+        path.join(
+          actualOutputPath,
+          "frames",
+          `${path.basename(file, path.extname(file))}_${animation}_%03d.png`,
+        ),
+        path.join(actualOutputPath, `${animation}.webm`),
+        ["-r 10", "-hwaccel auto"],
+        ["-vcodec libvpx-vp9"],
+      );
+
+      fileBar.increment();
+    }
+  }
   if (postFunc) await postFunc(plist, path.dirname(file), actualOutputPath);
 
-  fileBar.update({ task: "Cleanup..." });
+  if (fileBar) fileBar.update({ task: "Cleanup..." });
   await fs.rm(path.join(actualOutputPath, "frames"), {
     recursive: true,
     force: true,
   });
 
-  fileBar.update({
-    task: fitLabel("✓ Done!", FILE_DISPLAY_LENGTH),
-  });
-
-  multiBar.remove(fileBar);
+  if (fileBar) {
+    fileBar.update({
+      task: fitLabel("✓ Done!", FILE_DISPLAY_LENGTH),
+    });
+    multiBar.remove(fileBar);
+  }
 }
