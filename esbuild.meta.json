@@ -1,7 +1,7 @@
 {
   "inputs": {
     "src/applications/UnitPresetBrowser.ts": {
-      "bytes": 6983,
+      "bytes": 8881,
       "imports": [
         {
           "path": "types",
@@ -17,8 +17,13 @@
       "format": "esm"
     },
     "src/applications/ActorCreator.ts": {
-      "bytes": 9186,
+      "bytes": 6054,
       "imports": [
+        {
+          "path": "types",
+          "kind": "import-statement",
+          "external": true
+        },
         {
           "path": "./types",
           "kind": "import-statement",
@@ -44,7 +49,7 @@
       "format": "esm"
     },
     "src/types.ts": {
-      "bytes": 1083,
+      "bytes": 1097,
       "imports": [
         {
           "path": "SpriteAnimations/types/interfaces",
@@ -55,7 +60,7 @@
       "format": "esm"
     },
     "src/index.json": {
-      "bytes": 1287885,
+      "bytes": 1323567,
       "imports": [],
       "format": "esm",
       "with": {
@@ -63,7 +68,7 @@
       }
     },
     "src/module.ts": {
-      "bytes": 326,
+      "bytes": 327,
       "imports": [
         {
           "path": "src/applications/index.ts",
@@ -87,7 +92,7 @@
       "format": "cjs"
     },
     "src/styles/module.scss": {
-      "bytes": 2750,
+      "bytes": 3049,
       "imports": []
     }
   },
@@ -96,7 +101,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2094105
+      "bytes": 2152162
     },
     "dist/module.js": {
       "imports": [],
@@ -104,10 +109,10 @@
       "entryPoint": "src/module.ts",
       "inputs": {
         "src/applications/UnitPresetBrowser.ts": {
-          "bytesInOutput": 6547
+          "bytesInOutput": 8160
         },
         "src/applications/ActorCreator.ts": {
-          "bytesInOutput": 7384
+          "bytesInOutput": 5855
         },
         "src/applications/index.ts": {
           "bytesInOutput": 129
@@ -116,29 +121,29 @@
           "bytesInOutput": 82
         },
         "src/index.json": {
-          "bytesInOutput": 1485457
+          "bytesInOutput": 1534130
         },
         "src/module.ts": {
           "bytesInOutput": 304
         }
       },
-      "bytes": 1500505
+      "bytes": 1549262
     },
     "dist/styles/module.css.map": {
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 1523
+      "bytes": 1710
     },
     "dist/styles/module.css": {
       "imports": [],
       "entryPoint": "src/styles/module.scss",
       "inputs": {
         "src/styles/module.scss": {
-          "bytesInOutput": 922
+          "bytesInOutput": 1053
         }
       },
-      "bytes": 990
+      "bytes": 1121
     }
   }
 }

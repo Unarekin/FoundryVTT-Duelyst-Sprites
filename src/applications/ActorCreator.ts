@@ -1,4 +1,5 @@
-import { ActorCreatorContext, ActorCreatorConfiguration, ActorData } from "./types";
+import { Unit } from "types";
+import { ActorCreatorContext, ActorCreatorConfiguration } from "./types";
 import { UnitPresetBrowserApplication } from "./UnitPresetBrowser"
 
 export class ActorCreatorApplication extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.api.ApplicationV2<ActorCreatorContext, ActorCreatorConfiguration>) {
@@ -41,48 +42,13 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
   static async PresetBrowser(this: ActorCreatorApplication) {
     try {
       const preset = await UnitPresetBrowserApplication.browse();
-      console.log("Preset:", preset);
+      if (!preset) return;
+      const selector = this.element.querySelector(`select[name="preset"]`);
+      if (selector instanceof HTMLSelectElement) {
+        selector.value = preset?.id ?? "";
+        selector.dispatchEvent(new Event("change"));
+      }
 
-
-      // const presets = Object.entries(CONFIG.DuelystSprites.units)
-      //   .map(([key, value]: [string, Unit]) => ({
-      //     src: `modules/${__MODULE_ID__}/assets/units/${key}/${value.icon}`,
-      //     id: key,
-      //     label: value.name
-      //   }));
-
-      // const factions = Object.entries(CONFIG.DuelystSprites.factions).map(([key, value]: [string, Faction]) => ({
-      //   ...value,
-      //   id: parseInt(key)
-      // }));
-
-
-      // const unitTypes = Object.values(CONFIG.DuelystSprites.units).reduce((prev: string[], curr: Unit) => {
-      //   if (curr.type && !prev.includes(curr.type)) return [...prev, curr.type];
-      //   else return prev;
-      // }, [] as string[]) as string[];
-
-      // const content = await foundry.applications.handlebars.renderTemplate(`/modules/${__MODULE_ID__}/templates/presetBrowser.hbs`, {
-      //   presets,
-      //   factions,
-      //   unitTypes
-      // });
-      // const data = await foundry.applications.api.DialogV2.input({
-      //   window: {
-      //     title: "DUELYSTSPRITES.PRESETBROWSER.TITLE",
-      //   },
-      //   position: {
-      //     width: 725
-      //   },
-      //   content,
-      //   rejectClose: false,
-      //   render: (e: Event, dialog: foundry.applications.api.DialogV2) => {
-      //     this.setPresetFilters(`[data-role="faction-filter"]`, dialog.element);
-      //     this.setPresetFilters(`[data-role="type-filter"]`, dialog.element);
-      //   }
-      // });
-      // if (!data) return;
-      // console.log("Preset:", data?.presetId);
     } catch (err) {
       console.error(err);
       if (err instanceof Error) ui.notifications?.error(err.message, { console: false, localize: true });
@@ -90,40 +56,21 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
   }
 
 
-  async getActorData(preset: string): Promise<ActorData> {
-    const data: ActorData = {};
-    const fileDir = `modules/${__MODULE_ID__}/assets/units/${preset}`;
-    const picker = await foundry.applications.apps.FilePicker.implementation.browse("data", fileDir);
-
-    const portrait = picker.files.find(file => file.endsWith("portrait.webp"));
-    if (portrait) data.portrait = portrait;
-    else data.portrait = `${fileDir}/idle.webp`;
-
-    const insert = picker.files.find(file => file.endsWith("theatre-insert.webp"));
-    if (insert) data.theatreInsert = insert;
-    else data.theatreInsert = `${fileDir}/idle.gif`;
-
-    const animConfig = picker.files.find(file => file.endsWith("SpriteAnimationConfig.json"));
-    if (animConfig) {
-      const configContent = await fetch(animConfig);
-      const json = await configContent.json() as Record<string, unknown>;
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
-      if (json) data.spriteAnimations = json as any;
-    }
-
-    return data;
+  getActorData(preset: string): Unit | undefined {
+    return CONFIG.DuelystSprites.units[preset] as Unit | undefined;
   }
 
 
   static async formHandler(this: ActorCreatorApplication, event: Event | SubmitEvent, form: HTMLFormElement, formData: foundry.applications.ux.FormDataExtended) {
     const data = foundry.utils.expandObject(formData.object) as Record<string, unknown>;
 
-    const fileDir = `modules/${__MODULE_ID__}/assets/units/${data.preset as string}`;
-    const assetData = await this.getActorData(data.preset as string);
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+    const assetData: Unit = CONFIG.DuelystSprites.units[data.preset as string];
+    const fileDir = `modules/${__MODULE_ID__}/assets/units/${assetData.id}`;
 
     const actorData = {
       name: data.name as string,
-      img: assetData.portrait,
+      img: `${fileDir}/${assetData.portrait}`,
       type: data.type,
       ...(data.folder as string ? { folder: data.folder as string } : {}),
       prototypeToken: {
@@ -134,48 +81,34 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
       flags: {
         "sprite-animations": assetData.spriteAnimations,
         "theatre": {
-          baseinsert: assetData.theatreInsert ?? ""
+          baseinsert: `${fileDir}/${assetData.theatreInsert ?? ""}`
         }
       }
     }
 
     // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
-    await Actor.create(actorData as any);
+    const actor = await Actor.create(actorData as any);
+    if (actor?.sheet)
+      await actor.sheet.render({ force: true })
   }
 
 
-  protected async getPreviewImage(preset: string): Promise<string | undefined> {
-    const picker = await foundry.applications.apps.FilePicker.implementation.browse("data", `modules/${__MODULE_ID__}/assets/units/${preset}`);
-    // const portraitIndex = picker.files.findIndex(file => file.endsWith("portrait.webp"));
-    // if (portraitIndex !== -1) return picker.files[portraitIndex];
-
-    const idleIndex = picker.files.findIndex(file => file.endsWith("idle.webm"));
-    if (idleIndex !== -1) return picker.files[idleIndex];
-
-    return undefined;
+  protected getPreviewImage(preset: string): string | undefined {
+    const data = CONFIG.DuelystSprites.units[preset] as Unit | undefined;
+    if (!data) return;
+    const idle = data.spriteAnimations.animations.find(anim => anim.name === "idle");
+    return idle?.src;
   }
 
-  protected async setPreviewImage(preset: string): Promise<void> {
+  protected setPreviewImage(preset: string): void {
 
-    const picker = await foundry.applications.apps.FilePicker.implementation.browse("data", `modules/${__MODULE_ID__}/assets/units/${preset}`);
+    const data = CONFIG.DuelystSprites.units[preset] as Unit | undefined;
 
-    const idleAnimation = picker.files.find(file => file.endsWith("idle.webm"));
-    const animationConfig = picker.files.find(file => file.endsWith("SpriteAnimationConfig.json"));
-    const theatreInsert = picker.files.find(file => file.endsWith("theatre-insert.webp"));
-
-    const previewElement = this.element.querySelector(`[data-role="actor-preview"]`)
-    if (previewElement && idleAnimation) previewElement.setAttribute("src", idleAnimation);
-
-    const animationHint = this.element.querySelector(`[data-role="sprite-animation-hint"]`);
-    if (animationHint instanceof HTMLElement) animationHint.style.display = animationConfig ? "block" : "none";
-
-    const insertHint = this.element.querySelector(`[data-role="theatre-inserts-hint"]`);
-    if (insertHint instanceof HTMLElement) {
-      insertHint.style.display = theatreInsert ? "block" : "none";
-      const link = insertHint.querySelector("a");
-      if (link instanceof HTMLElement) link.dataset.tooltip = `<h3>${preset}</h3><img src="${theatreInsert}" style='width:512px'>`
-    }
-
+    const previewElement = this.element.querySelector(`[data-role="actor-preview"]`);
+    if (!(previewElement instanceof HTMLElement)) return;
+    const idleAnim = data?.spriteAnimations.animations.find(anim => anim.name === "idle");
+    previewElement.setAttribute("src", idleAnim?.src ?? "");
+    previewElement.style.display = data ? "block" : "none";
   }
 
   protected async _prepareContext(options: foundry.applications.api.ApplicationV2.RenderOptions): Promise<ActorCreatorContext> {
@@ -215,10 +148,10 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
     const presetSelector = this.element.querySelector(`select[name="preset"]`);
     if (presetSelector instanceof HTMLSelectElement) {
       if (presetSelector.value)
-        void this.setPreviewImage(presetSelector.value).catch(console.error);
+        this.setPreviewImage(presetSelector.value);
 
       presetSelector.addEventListener("change", () => {
-        void this.setPreviewImage(presetSelector.value).catch(console.error);
+        this.setPreviewImage(presetSelector.value);
       })
     }
   }

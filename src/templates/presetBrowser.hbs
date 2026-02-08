@@ -7,6 +7,7 @@
           placeholder="Search..."
           name="search"
           data-role="search"
+          value="{{searchTerm}}"
         />
       </label>
       <fieldset>
@@ -27,7 +28,6 @@
       <fieldset>
         <legend>{{localize "DUELYSTSPRITES.UNITTYPES.LABEL"}}</legend>
         {{#each unitTypes as |type|}}
-        {{log "Type:" type}}
         <label>
           <input type="checkbox" data-filter-type="type" data-filter-value="{{type.value}}" {{checked type.filterEnabled}} name="type-{{type.value}}">
           {{localize type.label}}
@@ -39,12 +39,15 @@
       <div class="duelyst-preset-browser__item-list">
         {{#each units as |unit|}}
           <div
-            class="duelyst-preset-browser__preset-item-preview"
+            class="duelyst-preset-browser__preset-item-preview{{#if unit.selected }} duelyst-preset-browser__preset-item-preview--selected{{/if}}"
             style="background-image:url({{unit.src}})"
+            data-action="selectPreset"
             data-tooltip="{{{unit.tooltip}}}"
             data-tooltip-direction="RIGHT"
+            data-role="select-preset"
+            data-preset="{{unit.id}}"
           >
-          <h4>{{unit.label}}</h4>
+            <h4>{{unit.label}}</h4>
           </div>
         {{/each}}
       </div>

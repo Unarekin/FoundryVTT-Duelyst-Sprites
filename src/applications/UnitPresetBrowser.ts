@@ -7,7 +7,8 @@ import { TypeContext, UnitContext, UnitPresetConfiguration, UnitPresetContext } 
 export class UnitPresetBrowserApplication extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.api.ApplicationV2<UnitPresetContext, UnitPresetConfiguration>) {
   public static PARTS: Record<string, foundry.applications.api.HandlebarsApplicationMixin.HandlebarsTemplatePart> = {
     main: {
-      template: `modules/${__MODULE_ID__}/templates/presetBrowser.hbs`
+      template: `modules/${__MODULE_ID__}/templates/presetBrowser.hbs`,
+      scrollable: [".duelyst-preset-browser__item-list"]
     },
     footer: {
       template: `templates/generic/form-footer.hbs`
@@ -30,7 +31,9 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
       // eslint-disable-next-line @typescript-eslint/unbound-method
       cancel: UnitPresetBrowserApplication.Cancel,
       // eslint-disable-next-line @typescript-eslint/unbound-method
-      confirm: UnitPresetBrowserApplication.Confirm
+      confirm: UnitPresetBrowserApplication.Confirm,
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      selectPreset: UnitPresetBrowserApplication.SelectPreset
     }
   }
 
@@ -47,9 +50,19 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
     await this.close();
   }
 
+  #selectedPreset = "";
+  static async SelectPreset(this: UnitPresetBrowserApplication, e: Event, elem: HTMLElement) {
+    const unitId = elem.dataset.preset;
+    if (typeof unitId !== "string") return;
+    if (unitId && this.#selectedPreset === unitId) this.#selectedPreset = "";
+    else this.#selectedPreset = unitId;
+    await this.render();
+  }
+
   protected _onClose(options: foundry.applications.api.ApplicationV2.RenderOptions): void {
     super._onClose(options);
-    if (this.#browseResolve) this.#browseResolve();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-argument
+    if (this.#browseResolve) this.#browseResolve(CONFIG.DuelystSprites.units[this.#selectedPreset]);
   }
 
   // #region Browse Promise
@@ -75,6 +88,7 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
   // #endregion
 
   #currentFilters: Record<string, Record<string, boolean>> = {}
+  #searchTerm = "";
 
   protected getUnitTooltip(unit: Unit, key: string): string {
     const src = unit.spriteAnimations.animations.find(anim => anim.name === "idle")?.src ?? `modules/${__MODULE_ID__}/assets/units/${key}/${unit.icon}`;
@@ -92,19 +106,37 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
     `;
   }
 
+  protected matchSearchTerm(unit: Unit, term: string): boolean {
+    // TODO: More sophisticated matching algorithm
+    const words = term.split(" ");
+    const metaCharacters = /[(){[*+?.\\^$|]/g;
+    // Escape regex special characters
+    const filteredWords = words.map(word => word.replace(metaCharacters, "\\$&"));
+    const regExp = new RegExp(`\\b(?:(.*?)${filteredWords.join("|")})(.*?)\\b`, "gi");
+    const faction = CONFIG.DuelystSprites.factions[unit.factionId] as Faction | undefined;
+    return [
+      unit.name,
+      unit.description,
+      unit.type,
+      ...(faction ? [faction.name, faction.abbr] : []),
+      ...unit.tags
+    ].some(item => regExp.test(item));
+  }
+
   protected getFilteredUnits(): UnitContext[] {
     return Object.entries(CONFIG.DuelystSprites.units)
       // eslint-disable-next-line @typescript-eslint/no-unused-vars
       .filter(([key, unit]: [string, Unit]) => {
         if (!this.#currentFilters.faction[unit.factionId]) return false;
         if (unit.type && !this.#currentFilters.type[unit.type]) return false;
+        if (this.#searchTerm && !this.matchSearchTerm(unit, this.#searchTerm)) return false;
         return true;
       }).map(([key, unit]: [string, Unit]) => ({
         id: key,
         src: `modules/${__MODULE_ID__}/assets/units/${key}/${unit.icon}`,
         label: unit.name,
-        tooltip: this.getUnitTooltip(unit, key)
-        // tooltip: `<h4>${unit.name}</h4><img src='${unit.spriteAnimations.animations.find(item => item.name === "idle")?.src ?? `modules/${__MODULE_ID__}/assets/units/${key}/${unit.icon}`}'>`
+        tooltip: this.getUnitTooltip(unit, key),
+        selected: this.#selectedPreset === key
       })).sort((a, b) => a.label.localeCompare(b.label));
   }
 
@@ -131,6 +163,7 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
     }, []) as TypeContext[])
       .sort((a, b) => a.label.localeCompare(b.label))
 
+    context.selectedPreset = this.#selectedPreset;
 
     context.filters = foundry.utils.deepClone(this.#currentFilters);
     context.factions = Object.entries(CONFIG.DuelystSprites.factions).map(([key, value]: [string, Faction]) => ({
@@ -140,7 +173,7 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
       filterEnabled: this.#currentFilters.faction[key]
     }))
       .sort((a, b) => a.name.localeCompare(b.name));
-
+    context.searchTerm = this.#searchTerm;
 
     context.buttons = [
       { type: "button", label: "Cancel", action: "cancel" },
@@ -179,6 +212,22 @@ export class UnitPresetBrowserApplication extends foundry.applications.api.Handl
         void this.render();
       })
     }
+
+    const searchBar = this.element.querySelector(`[data-role="search"]`);
+    if (searchBar instanceof HTMLInputElement) {
+      searchBar.addEventListener("change", () => {
+        this.#searchTerm = searchBar.value;
+
+        void this.render();
+      })
+    }
+
+    // const unitButtons: HTMLElement[] = Array.from(this.element.querySelectorAll(`[data-role="select-preset"]`));
+    // for (const elem of unitButtons) {
+    //   elem.addEventListener("click", () => {
+
+    //   })
+    // }
 
   }
 

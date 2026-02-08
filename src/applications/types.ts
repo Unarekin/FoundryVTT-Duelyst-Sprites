@@ -1,5 +1,5 @@
 import { Faction } from "types";
-import { AnimationConfig, MeshAdjustmentConfig } from "../../node_modules/SpriteAnimations/types/interfaces";
+// import { AnimationConfig, MeshAdjustmentConfig } from "../../node_modules/SpriteAnimations/types/interfaces";
 
 export interface ActorCreatorContext extends foundry.applications.api.ApplicationV2.RenderContext {
   actorSelect: Record<string, string>;
@@ -14,20 +14,21 @@ export interface ActorCreatorConfiguration extends foundry.applications.api.Appl
 
 }
 
-export interface ActorData {
-  theatreInsert?: string;
-  portrait?: string;
-  spriteAnimations?: {
-    animations: AnimationConfig[],
-    meshAdjustments: MeshAdjustmentConfig
-  }
-}
+// export interface ActorData {
+//   theatreInsert?: string;
+//   portrait?: string;
+//   spriteAnimations?: {
+//     animations: AnimationConfig[],
+//     meshAdjustments: MeshAdjustmentConfig
+//   }
+// }
 
 export interface UnitContext {
   id: string;
   label: string;
   src: string;
   tooltip: string;
+  selected: boolean;
 }
 
 export interface FactionContext extends Faction {
@@ -44,6 +45,7 @@ export interface UnitPresetContext extends foundry.applications.api.ApplicationV
   units: UnitContext[];
   factions: Faction[];
   unitTypes: TypeContext[];
+  selectedPreset: string;
   searchTerm: string;
   filters: Record<string, Record<string, boolean>>;
   buttons: foundry.applications.api.ApplicationV2.FormFooterButton[];

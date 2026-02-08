@@ -25,6 +25,7 @@ export const UnitTypes = ["general", "minion", ""] as const;
 export type UnitType = typeof UnitTypes[number];
 
 export interface Unit {
+  id: string;
   description: string;
   factionId: number;
   icon: string;

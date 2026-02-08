@@ -27,6 +27,7 @@ export async function postProcessPlist(plist, baseDir, outputDir) {
   const unitId = path.basename(textureName, path.extname(textureName));
 
   const CURRENT_DATA = {
+    id: unitId,
     factionId: -1,
     type: "",
     name: unitId,
