@@ -1,4 +1,5 @@
 import { ActorCreatorContext, ActorCreatorConfiguration, ActorData } from "./types";
+import { UnitPresetBrowserApplication } from "./UnitPresetBrowser"
 
 export class ActorCreatorApplication extends foundry.applications.api.HandlebarsApplicationMixin(foundry.applications.api.ApplicationV2<ActorCreatorContext, ActorCreatorConfiguration>) {
 
@@ -19,7 +20,8 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
     actions: {
       // eslint-disable-next-line @typescript-eslint/unbound-method
       cancel: ActorCreatorApplication.Cancel,
-
+      // eslint-disable-next-line @typescript-eslint/unbound-method
+      presetBrowser: ActorCreatorApplication.PresetBrowser
     }
   }
 
@@ -35,6 +37,58 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
   static async Cancel(this: ActorCreatorApplication) {
     await this.close();
   }
+
+  static async PresetBrowser(this: ActorCreatorApplication) {
+    try {
+      const preset = await UnitPresetBrowserApplication.browse();
+      console.log("Preset:", preset);
+
+
+      // const presets = Object.entries(CONFIG.DuelystSprites.units)
+      //   .map(([key, value]: [string, Unit]) => ({
+      //     src: `modules/${__MODULE_ID__}/assets/units/${key}/${value.icon}`,
+      //     id: key,
+      //     label: value.name
+      //   }));
+
+      // const factions = Object.entries(CONFIG.DuelystSprites.factions).map(([key, value]: [string, Faction]) => ({
+      //   ...value,
+      //   id: parseInt(key)
+      // }));
+
+
+      // const unitTypes = Object.values(CONFIG.DuelystSprites.units).reduce((prev: string[], curr: Unit) => {
+      //   if (curr.type && !prev.includes(curr.type)) return [...prev, curr.type];
+      //   else return prev;
+      // }, [] as string[]) as string[];
+
+      // const content = await foundry.applications.handlebars.renderTemplate(`/modules/${__MODULE_ID__}/templates/presetBrowser.hbs`, {
+      //   presets,
+      //   factions,
+      //   unitTypes
+      // });
+      // const data = await foundry.applications.api.DialogV2.input({
+      //   window: {
+      //     title: "DUELYSTSPRITES.PRESETBROWSER.TITLE",
+      //   },
+      //   position: {
+      //     width: 725
+      //   },
+      //   content,
+      //   rejectClose: false,
+      //   render: (e: Event, dialog: foundry.applications.api.DialogV2) => {
+      //     this.setPresetFilters(`[data-role="faction-filter"]`, dialog.element);
+      //     this.setPresetFilters(`[data-role="type-filter"]`, dialog.element);
+      //   }
+      // });
+      // if (!data) return;
+      // console.log("Preset:", data?.presetId);
+    } catch (err) {
+      console.error(err);
+      if (err instanceof Error) ui.notifications?.error(err.message, { console: false, localize: true });
+    }
+  }
+
 
   async getActorData(preset: string): Promise<ActorData> {
     const data: ActorData = {};

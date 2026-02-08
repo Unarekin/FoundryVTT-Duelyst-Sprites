@@ -1,5 +1,21 @@
 {
   "DUELYSTSPRITES": {
-    "DATA": {}
+    "FACTIONS": {
+      "LABEL": "Factions",
+      "LYONAR": "Lyonar Kingdom",
+      "SONGHAI": "Songhai Empire",
+      "VETRUVIAN": "Vetruvian Imperium",
+      "ABYSSIAN": "Abyssian Host",
+      "MAGMAR": "Magmar Aspects",
+      "VANAR": "Vanar Kindred",
+      "UNKNOWN": "Unknown",
+      "NEUTRAL": "Neutral"
+    },
+    "UNITTYPES": {
+      "LABEL": "Type",
+      "MINION": "Minion",
+      "GENERAL": "General",
+      "UNKNOWN": "Unknown"
+    }
   }
 }

@@ -1,0 +1,53 @@
+<section>
+  <section class="duelyst-preset-browser">
+    <div class="duelyst-preset-browser__sidebar">
+      <label>
+        <input
+          type="search"
+          placeholder="Search..."
+          name="search"
+          data-role="search"
+        />
+      </label>
+      <fieldset>
+        <legend>{{localize "DUELYSTSPRITES.FACTIONS.LABEL"}}</legend>
+        {{#each factions as |faction|}}
+          <label>
+            <input
+              type="checkbox"
+              data-filter-type="faction"
+              data-filter-value="{{faction.id}}"
+              name="faction-{{faction.id}}"
+              {{checked filterEnabled}}
+            />
+            {{faction.name}}
+          </label>
+        {{/each}}
+      </fieldset>
+      <fieldset>
+        <legend>{{localize "DUELYSTSPRITES.UNITTYPES.LABEL"}}</legend>
+        {{#each unitTypes as |type|}}
+        {{log "Type:" type}}
+        <label>
+          <input type="checkbox" data-filter-type="type" data-filter-value="{{type.value}}" {{checked type.filterEnabled}} name="type-{{type.value}}">
+          {{localize type.label}}
+        </label>
+        {{/each}}
+    </div>
+
+    <fieldset style="padding:0">
+      <div class="duelyst-preset-browser__item-list">
+        {{#each units as |unit|}}
+          <div
+            class="duelyst-preset-browser__preset-item-preview"
+            style="background-image:url({{unit.src}})"
+            data-tooltip="{{{unit.tooltip}}}"
+            data-tooltip-direction="RIGHT"
+          >
+          <h4>{{unit.label}}</h4>
+          </div>
+        {{/each}}
+      </div>
+    </fieldset>
+  </section>
+</section>

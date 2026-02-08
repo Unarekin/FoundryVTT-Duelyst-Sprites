@@ -1,12 +1,33 @@
 {
   "inputs": {
+    "src/applications/UnitPresetBrowser.ts": {
+      "bytes": 6983,
+      "imports": [
+        {
+          "path": "types",
+          "kind": "import-statement",
+          "external": true
+        },
+        {
+          "path": "./types",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
     "src/applications/ActorCreator.ts": {
-      "bytes": 7097,
+      "bytes": 9186,
       "imports": [
         {
           "path": "./types",
           "kind": "import-statement",
           "external": true
+        },
+        {
+          "path": "src/applications/UnitPresetBrowser.ts",
+          "kind": "import-statement",
+          "original": "./UnitPresetBrowser"
         }
       ],
       "format": "esm"
@@ -22,8 +43,19 @@
       ],
       "format": "esm"
     },
+    "src/types.ts": {
+      "bytes": 1083,
+      "imports": [
+        {
+          "path": "SpriteAnimations/types/interfaces",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "esm"
+    },
     "src/index.json": {
-      "bytes": 1244797,
+      "bytes": 1287885,
       "imports": [],
       "format": "esm",
       "with": {
@@ -31,12 +63,17 @@
       }
     },
     "src/module.ts": {
-      "bytes": 304,
+      "bytes": 326,
       "imports": [
         {
           "path": "src/applications/index.ts",
           "kind": "import-statement",
           "original": "./applications"
+        },
+        {
+          "path": "src/types.ts",
+          "kind": "import-statement",
+          "original": "./types"
         },
         {
           "path": "src/index.json",
@@ -50,7 +87,7 @@
       "format": "cjs"
     },
     "src/styles/module.scss": {
-      "bytes": 449,
+      "bytes": 2750,
       "imports": []
     }
   },
@@ -59,43 +96,49 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 1998029
+      "bytes": 2094105
     },
     "dist/module.js": {
       "imports": [],
       "exports": [],
       "entryPoint": "src/module.ts",
       "inputs": {
+        "src/applications/UnitPresetBrowser.ts": {
+          "bytesInOutput": 6547
+        },
         "src/applications/ActorCreator.ts": {
-          "bytesInOutput": 6848
+          "bytesInOutput": 7384
         },
         "src/applications/index.ts": {
           "bytesInOutput": 129
         },
+        "src/types.ts": {
+          "bytesInOutput": 82
+        },
         "src/index.json": {
-          "bytesInOutput": 1436648
+          "bytesInOutput": 1485457
         },
         "src/module.ts": {
-          "bytesInOutput": 284
+          "bytesInOutput": 304
         }
       },
-      "bytes": 1444448
+      "bytes": 1500505
     },
     "dist/styles/module.css.map": {
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 215
+      "bytes": 1523
     },
     "dist/styles/module.css": {
       "imports": [],
       "entryPoint": "src/styles/module.scss",
       "inputs": {
         "src/styles/module.scss": {
-          "bytesInOutput": 58
+          "bytesInOutput": 922
         }
       },
-      "bytes": 126
+      "bytes": 990
     }
   }
 }

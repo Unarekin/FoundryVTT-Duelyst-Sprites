@@ -4,14 +4,19 @@
   <div class="flexrow">
     <div class="flexcol flex1">
       <div class="flex0">
-        <div class="form-group">
+        <div class="form-group slim">
           <label for="{{idPrefix}}-preset">{{localize
               "DUELYSTSPRITES.ACTORCREATOR.PRESET.LABEL"
             }}</label>
-          <select id="{{idPrefix}}-preset" name="preset" required>
-            <option></option>
-            {{selectOptions actorSelect selected=actorId}}
-          </select>
+          <div class="form-fields">
+            <select id="{{idPrefix}}-preset" name="preset" required>
+              <option></option>
+              {{selectOptions actorSelect selected=actorId}}
+            </select>
+            <button type="button" data-action="presetBrowser">
+              <i class="fa-solid fa-ellipsis"></i>
+            </button>
+          </div>
 
           <p class="hint">{{localize
               "DUELYSTSPRITES.ACTORCREATOR.PRESET.HINT"

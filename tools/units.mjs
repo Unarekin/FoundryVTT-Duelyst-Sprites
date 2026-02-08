@@ -7,9 +7,10 @@ import {
   randomID,
 } from "./functions.mjs";
 
-import { DATA } from "./consts.mjs";
+import { ASSET_PATH, DATA } from "./consts.mjs";
 import { intToRGBA } from "jimp";
-
+import { GifUtil } from "gifwrap";
+import { ResizeStrategy } from "jimp";
 import CARD_DATA from "./downloads/carddata.json" with { type: "json" };
 
 const Jimp = createJimp();
@@ -30,7 +31,11 @@ export async function postProcessPlist(plist, baseDir, outputDir) {
     type: "",
     name: unitId,
     description: "",
+    tags: [],
   };
+
+  if (unitId.includes("boss)")) CURRENT_DATA.tags.push("boss");
+  if (unitId.includes("neutral_")) CURRENT_DATA.tags.push("neutral");
 
   DATA.units[unitId] = CURRENT_DATA;
 
@@ -75,16 +80,40 @@ export async function postProcessPlist(plist, baseDir, outputDir) {
     }
   }
 
+  const gif = await GifUtil.read(
+    path.join(ASSET_PATH, "units", unitId, "idle.gif"),
+  );
+  const img = Jimp.fromBitmap(gif.frames[0].bitmap);
+  img.autocrop();
+  img.scaleToFit({ w: 128, h: 128, mode: ResizeStrategy.NEAREST_NEIGHBOR });
+  await img.write(path.join(outputDir, "icon.webp"));
+  CURRENT_DATA.icon = "icon.webp";
+
   if (!CURRENT_DATA.portrait) CURRENT_DATA.portrait = "idle.webp";
   if (!CURRENT_DATA.theatreInsert) CURRENT_DATA.theatreInsert = "idle.gif";
 
   const card = CARD_DATA.find(item => item.spriteName === unitId);
   if (card) {
     CURRENT_DATA.factionId = card.factionId;
-    CURRENT_DATA.type = card.cardType;
+    CURRENT_DATA.type = card.cardType.toLowerCase();
     CURRENT_DATA.name = card.name;
     CURRENT_DATA.description = card.description;
   }
+  if (CURRENT_DATA.name.startsWith("boss_"))
+    CURRENT_DATA.name = CURRENT_DATA.name.substring(5);
+  if (CURRENT_DATA.name.startsWith("neutral_"))
+    CURRENT_DATA.name = CURRENT_DATA.name.substring(8);
+
+  if (DATA.factions?.[CURRENT_DATA.factionId]) {
+    CURRENT_DATA.tags.push(
+      DATA.factions[CURRENT_DATA.factionId].abbr.toLowerCase(),
+    );
+    CURRENT_DATA.tags.push(
+      DATA.factions[CURRENT_DATA.factionId].name.toLowerCase(),
+    );
+  }
+  if (CURRENT_DATA.type)
+    CURRENT_DATA.tags.push(CURRENT_DATA.type.toLowerCase());
 }
 
 async function calculateMeshOffset(imagePath, plist) {
