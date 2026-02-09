@@ -1,0 +1,992 @@
+{
+  "circleofdessication": {
+    "id": "circleofdessication",
+    "src": "modules/duelyst-sprites/assets/fx/f3_fx_circleofdessication/f3_fx_circleofdessication.webm"
+  },
+  "entropicdecay": {
+    "id": "entropicdecay",
+    "src": "modules/duelyst-sprites/assets/fx/f3_fx_entropicdecay/f3_fx_entropicdecay.webm"
+  },
+  "flamingstampede": {
+    "id": "flamingstampede",
+    "src": "modules/duelyst-sprites/assets/fx/f5_fx_flamingstampede/f5_fx_flamingstampede.webm"
+  },
+  "winterswake": {
+    "id": "winterswake",
+    "src": "modules/duelyst-sprites/assets/fx/f6_fx_winterswake/f6_fx_winterswake.webm"
+  },
+  "animalslash": {
+    "id": "animalslash",
+    "src": "modules/duelyst-sprites/assets/fx/fx_animalslash/fx_animalslash.webm"
+  },
+  "artifactbreak": {
+    "id": "artifactbreak",
+    "src": "modules/duelyst-sprites/assets/fx/fx_artifactbreak/fx_artifactbreak.webm"
+  },
+  "artifacthit": {
+    "id": "artifacthit",
+    "src": "modules/duelyst-sprites/assets/fx/fx_artifacthit/fx_artifacthit.webm"
+  },
+  "attackplus": {
+    "id": "attackplus",
+    "src": "modules/duelyst-sprites/assets/fx/fx_attackplus/fx_attackplus.webm"
+  },
+  "beamfire": {
+    "id": "beamfire",
+    "src": "modules/duelyst-sprites/assets/fx/fx_beamfire/fx_beamfire.webm"
+  },
+  "beamlaser": {
+    "id": "beamlaser",
+    "src": "modules/duelyst-sprites/assets/fx/fx_beamlaser/fx_beamlaser.webm"
+  },
+  "beamtesla": {
+    "id": "beamtesla",
+    "src": "modules/duelyst-sprites/assets/fx/fx_beamtesla/fx_beamtesla.webm"
+  },
+  "bigfirehitspark": {
+    "id": "bigfirehitspark",
+    "src": "modules/duelyst-sprites/assets/fx/fx_bigfirehitspark/fx_bigfirehitspark.webm"
+  },
+  "bladebreaker": {
+    "id": "bladebreaker",
+    "src": "modules/duelyst-sprites/assets/fx/fx_bladebreaker/fx_bladebreaker.webm"
+  },
+  "bladestorm": {
+    "id": "bladestorm",
+    "src": "modules/duelyst-sprites/assets/fx/fx_bladestorm/fx_bladestorm.webm"
+  },
+  "bluewatersplash": {
+    "id": "bluewatersplash",
+    "src": "modules/duelyst-sprites/assets/fx/fx_bluewatersplash/fx_bluewatersplash.webm"
+  },
+  "bouldersphere": {
+    "id": "bouldersphere",
+    "src": "modules/duelyst-sprites/assets/fx/fx_bouldersphere/fx_bouldersphere.webm"
+  },
+  "buff": {
+    "id": "buff",
+    "src": "modules/duelyst-sprites/assets/fx/fx_buff/fx_buff.webm"
+  },
+  "carddraw": {
+    "id": "carddraw",
+    "src": "modules/duelyst-sprites/assets/fx/fx_carddraw/fx_carddraw.webm"
+  },
+  "chainlightning": {
+    "id": "chainlightning",
+    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm"
+  },
+  "clawslash": {
+    "id": "clawslash",
+    "src": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm"
+  },
+  "cleanse": {
+    "id": "cleanse",
+    "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/fx_cleanse.webm"
+  },
+  "crossslash": {
+    "id": "crossslash",
+    "src": "modules/duelyst-sprites/assets/fx/fx_crossslash/fx_crossslash.webm"
+  },
+  "crossslash_x": {
+    "id": "crossslash_x",
+    "src": "modules/duelyst-sprites/assets/fx/fx_crossslash_x/fx_crossslash_x.webm"
+  },
+  "damagedecal": {
+    "id": "damagedecal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_damagedecal/fx_damagedecal.webm"
+  },
+  "deathplagueicon": {
+    "id": "deathplagueicon",
+    "src": "modules/duelyst-sprites/assets/fx/fx_deathplagueicon/fx_deathplagueicon.webm"
+  },
+  "distortion_hex_shield": {
+    "id": "distortion_hex_shield",
+    "src": "modules/duelyst-sprites/assets/fx/fx_distortion_hex_shield/fx_distortion_hex_shield.webm"
+  },
+  "distortion_water_bubble": {
+    "id": "distortion_water_bubble",
+    "src": "modules/duelyst-sprites/assets/fx/fx_distortion_water_bubble/fx_distortion_water_bubble.webm"
+  },
+  "disintegrate": {
+    "id": "disintegrate",
+    "src": "modules/duelyst-sprites/assets/fx/fx_disintegrate/fx_disintegrate.webm"
+  },
+  "doom": {
+    "id": "doom",
+    "src": "modules/duelyst-sprites/assets/fx/fx_doom/fx_doom.webm"
+  },
+  "electrical": {
+    "id": "electrical",
+    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_electrical/electrical.webm"
+  },
+  "electricsphere": {
+    "id": "electricsphere",
+    "src": "modules/duelyst-sprites/assets/fx/fx_electricsphere/fx_electricsphere.webm"
+  },
+  "energyhaloground": {
+    "id": "energyhaloground",
+    "src": "modules/duelyst-sprites/assets/fx/fx_energyhaloground/fx_energyhaloground.webm"
+  },
+  "explosion": {
+    "blue": {
+      "id": "explosionblue",
+      "src": "modules/duelyst-sprites/assets/fx/fx_explosionblue/explosionmediumblue_ground.webm"
+    },
+    "electrical": {
+      "blue": {
+        "id": "explosionblueelectrical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosionblueelectrical/fx_explosionblueelectrical.webm"
+      },
+      "green": {
+        "id": "explosiongreenelectrical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosiongreenelectrical/fx_explosiongreenelectrical.webm"
+      },
+      "red": {
+        "id": "explosionredelectrical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosionredelectrical/fx_explosionredelectrical.webm"
+      },
+      "yellow": {
+        "id": "explosionyellowelectrical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosionyellowelectrical/fx_explosionyellowelectrical.webm"
+      }
+    },
+    "big": {
+      "id": "explosionbig",
+      "src": "modules/duelyst-sprites/assets/fx/fx_blood_explosion/explosionbig.webm"
+    },
+    "medium": {
+      "id": "explosionmedium",
+      "src": "modules/duelyst-sprites/assets/fx/fx_blood_explosion/explosionmedium.webm"
+    },
+    "blood": {
+      "big": {
+        "id": "bloodbig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_blood_explosion/bloodbig.webm"
+      },
+      "medium": {
+        "id": "bloodmedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_blood_explosion/bloodmedium.webm"
+      }
+    },
+    "whitehot": {
+      "big": {
+        "id": "whitehotbig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_whiteexplosion/whitehotbig.webm"
+      },
+      "medium": {
+        "id": "whitehotmedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_whiteexplosion/whitehotmedium.webm"
+      }
+    },
+    "smoke": {
+      "orange": {
+        "id": "explosionorangesmoke",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosionorangesmoke/fx_explosionorangesmoke.webm"
+      },
+      "purple": {
+        "id": "explosionpurplesmoke",
+        "src": "modules/duelyst-sprites/assets/fx/fx_explosionpurplesmoke/fx_explosionpurplesmoke.webm"
+      }
+    }
+  },
+  "f1_aperionssurge": {
+    "id": "f1_aperionssurge",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_aperionssurge/fx_f1_aperionssurge.webm"
+  },
+  "f1_aurynnexus": {
+    "id": "f1_aurynnexus",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_aurynnexus/fx_f1_aurynnexus.webm"
+  },
+  "f1_bbs_afterglow": {
+    "id": "f1_bbs_afterglow",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_bbs_afterglow/fx_f1_bbs_afterglow.webm"
+  },
+  "f1_bbs_kingsguard": {
+    "id": "f1_bbs_kingsguard",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_bbs_kingsguard/fx_f1_bbs_kingsguard.webm"
+  },
+  "f1_bbs_roar": {
+    "id": "f1_bbs_roar",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_bbs_roar/fx_f1_bbs_roar.webm"
+  },
+  "f1_circlelife": {
+    "id": "f1_circlelife",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_circlelife/fx_f1_circlelife.webm"
+  },
+  "f1_decimate": {
+    "id": "f1_decimate",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_decimate/fx_f1_decimate.webm"
+  },
+  "f1_divinebond": {
+    "id": "f1_divinebond",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_divinebond/fx_f1_divinebond.webm"
+  },
+  "f1_hallowedground": {
+    "id": "f1_hallowedground",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_hallowedground/fx_f1_hallowedground.webm"
+  },
+  "f1_inmolation": {
+    "id": "f1_inmolation",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_inmolation/fx_f1_inmolation.webm"
+  },
+  "f1_lasting_judgment": {
+    "id": "f1_lasting_judgment",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_lasting_judgment/fx_f1_lasting_judgment.webm"
+  },
+  "f1_lionheartblessing": {
+    "id": "f1_lionheartblessing",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_lionheartblessing/fx_f1_lionheartblessing.webm"
+  },
+  "f1_martyrdom": {
+    "id": "f1_martyrdom",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_martyrdom/fx_f1_martyrdom.webm"
+  },
+  "f1_skyphalanx": {
+    "id": "f1_skyphalanx",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_skyphalanx/fx_f1_skyphalanx.webm"
+  },
+  "f1_sunbloom": {
+    "id": "f1_sunbloom",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_sunbloom/fx_f1_sunbloom.webm"
+  },
+  "f1_truestrike": {
+    "id": "f1_truestrike",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_truestrike/fx_f1_truestrike.webm"
+  },
+  "f1_warsurge": {
+    "id": "f1_warsurge",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f1_warsurge/fx_f1_warsurge.webm"
+  },
+  "f2": {
+    "general_attack": {
+      "id": "f2_general_attack",
+      "src": "modules/duelyst-sprites/assets/fx/fx_f2/general_attack.webm"
+    },
+    "special_devour": {
+      "id": "f2_special_devour",
+      "src": "modules/duelyst-sprites/assets/fx/fx_f2/special_devour.webm"
+    },
+    "support_syphon": {
+      "id": "f2_support_syphon",
+      "src": "modules/duelyst-sprites/assets/fx/fx_f2/support_syphon.webm"
+    }
+  },
+  "f2_ancestralpact": {
+    "id": "f2_ancestralpact",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_ancestralpact/fx_f2_ancestralpact.webm"
+  },
+  "f2_backstab": {
+    "id": "f2_backstab",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_backstab/fx_f2_backstab.webm"
+  },
+  "f2_bbs_arcaneheart": {
+    "id": "f2_bbs_arcaneheart",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_bbs_arcaneheart/fx_f2_bbs_arcaneheart.webm"
+  },
+  "f2_bbs_blink": {
+    "id": "f2_bbs_blink",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_bbs_blink/fx_f2_bbs_blink.webm"
+  },
+  "f2_bbs_spellsword": {
+    "id": "f2_bbs_spellsword",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_bbs_spellsword/fx_f2_bbs_spellsword.webm"
+  },
+  "f2_deathstrikeseal": {
+    "id": "f2_deathstrikeseal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_deathstrikeseal/fx_f2_deathstrikeseal.webm"
+  },
+  "f2_eightgates_bluelotus": {
+    "id": "f2_eightgates_bluelotus",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_eightgates_bluelotus/fx_f2_eightgates_bluelotus.webm"
+  },
+  "f2_eightgates_purpleflame": {
+    "id": "f2_eightgates_purpleflame",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_eightgates_purpleflame/fx_f2_eightgates_purpleflame.webm"
+  },
+  "f2_eightgates_teallotus": {
+    "id": "f2_eightgates_teallotus",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_eightgates_teallotus/fx_f2_eightgates_teallotus.webm"
+  },
+  "f2_heavenseclipse": {
+    "id": "f2_heavenseclipse",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_heavenseclipse/fx_f2_heavenseclipse.webm"
+  },
+  "f2_innerfocus": {
+    "id": "f2_innerfocus",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_innerfocus/fx_f2_innerfocus.webm"
+  },
+  "f2_killingedge": {
+    "id": "f2_killingedge",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_killingedge/fx_f2_killingedge.webm"
+  },
+  "f2_koanofhorns": {
+    "id": "f2_koanofhorns",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_koanofhorns/fx_f2_koanofhorns.webm"
+  },
+  "f2_manavortex": {
+    "id": "f2_manavortex",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_manavortex/fx_f2_manavortex.webm"
+  },
+  "f2_mistdragonseal": {
+    "id": "f2_mistdragonseal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_mistdragonseal/fx_f2_mistdragonseal.webm"
+  },
+  "f2_onyxbearseal": {
+    "id": "f2_onyxbearseal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_onyxbearseal/fx_f2_onyxbearseal.webm"
+  },
+  "f2_phoenixfire": {
+    "id": "f2_phoenixfire",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_phoenixfire/fx_f2_phoenixfire.webm"
+  },
+  "f2_saberspineseal": {
+    "id": "f2_saberspineseal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_saberspineseal/fx_f2_saberspineseal.webm"
+  },
+  "f2_spiraltechnique02": {
+    "id": "f2_spiraltechnique02",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_spiraltechnique02/fx_f2_spiraltechnique02.webm"
+  },
+  "f2_teleport": {
+    "id": "f2_teleport",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_teleport/fx_f2_teleport.webm"
+  },
+  "f2_twilightreiki": {
+    "id": "f2_twilightreiki",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_twilightreiki/fx_f2_twilightreiki.webm"
+  },
+  "f2_twinstrike": {
+    "id": "f2_twinstrike",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_twinstrike/fx_f2_twinstrike.webm"
+  },
+  "f2_twinstrike_part2": {
+    "id": "f2_twinstrike_part2",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f2_twinstrike_part2/fx_f2_twinstrike_part2.webm"
+  },
+  "f3_aurorastears": {
+    "id": "f3_aurorastears",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_aurorastears/fx_f3_aurorastears.webm"
+  },
+  "f3_bbs_hex": {
+    "id": "f3_bbs_hex",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_bbs_hex/fx_f3_bbs_hex.webm"
+  },
+  "f3_bbs_ironshroud": {
+    "id": "f3_bbs_ironshroud",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_bbs_ironshroud/fx_f3_bbs_ironshroud.webm"
+  },
+  "f3_bbs_psyonicstrike": {
+    "id": "f3_bbs_psyonicstrike",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_bbs_psyonicstrike/fx_f3_bbs_psyonicstrike.webm"
+  },
+  "f3_blast": {
+    "id": "f3_blast",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_blast/fx_f3_blast.webm"
+  },
+  "f3_blaststarfire": {
+    "id": "f3_blaststarfire",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_blaststarfire/fx_f3_blaststarfire.webm"
+  },
+  "f3_blindscorch": {
+    "id": "f3_blindscorch",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_blindscorch/fx_f3_blindscorch.webm"
+  },
+  "f3_boneswarm": {
+    "id": "f3_boneswarm",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_boneswarm/fx_f3_boneswarm.webm"
+  },
+  "f3_cataclysmicfault": {
+    "id": "f3_cataclysmicfault",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_cataclysmicfault/fx_f3_cataclysmicfault.webm"
+  },
+  "f3_cosmicflesh": {
+    "id": "f3_cosmicflesh",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_cosmicflesh/fx_f3_cosmicflesh.webm"
+  },
+  "f3_dominatewill": {
+    "id": "f3_dominatewill",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_dominatewill/fx_f3_dominatewill.webm"
+  },
+  "f3_drainmorale": {
+    "id": "f3_drainmorale",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_drainmorale/fx_f3_drainmorale.webm"
+  },
+  "f3_fountainofyouth": {
+    "id": "f3_fountainofyouth",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_fountainofyouth/fx_f3_fountainofyouth.webm"
+  },
+  "f3_rashascurse": {
+    "id": "f3_rashascurse",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_rashascurse/fx_f3_rashascurse.webm"
+  },
+  "f3_sandportal": {
+    "id": "f3_sandportal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_sandportal/fx_f3_sandportal.webm"
+  },
+  "f3_scionsfirstwish": {
+    "id": "f3_scionsfirstwish",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_scionsfirstwish/fx_f3_scionsfirstwish.webm"
+  },
+  "f3_scionssecondwish": {
+    "id": "f3_scionssecondwish",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_scionssecondwish/fx_f3_scionssecondwish.webm"
+  },
+  "f3_scionsthirdwish": {
+    "id": "f3_scionsthirdwish",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_scionsthirdwish/fx_f3_scionsthirdwish.webm"
+  },
+  "f3_starsfury": {
+    "id": "f3_starsfury",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f3_starsfury/fx_f3_starsfury.webm"
+  },
+  "f4_bbs_abyssalscar": {
+    "id": "f4_bbs_abyssalscar",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_bbs_abyssalscar/fx_f4_bbs_abyssalscar.webm"
+  },
+  "f4_bbs_husk": {
+    "id": "f4_bbs_husk",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_bbs_husk/fx_f4_bbs_husk.webm"
+  },
+  "f4_bbs_shadowspawn": {
+    "id": "f4_bbs_shadowspawn",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_bbs_shadowspawn/fx_f4_bbs_shadowspawn.webm"
+  },
+  "f4_consumingrebirth": {
+    "id": "f4_consumingrebirth",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_consumingrebirth/fx_f4_consumingrebirth.webm"
+  },
+  "f4_curseofagony": {
+    "id": "f4_curseofagony",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_curseofagony/fx_f4_curseofagony.webm"
+  },
+  "f4_daemoniclure": {
+    "id": "f4_daemoniclure",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_daemoniclure/fx_f4_daemoniclure.webm"
+  },
+  "f4_darkfiresacrifice": {
+    "id": "f4_darkfiresacrifice",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_darkfiresacrifice/fx_f4_darkfiresacrifice.webm"
+  },
+  "f4_darkfiretransformation": {
+    "id": "f4_darkfiretransformation",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_darkfiretransformation/fx_f4_darkfiretransformation.webm"
+  },
+  "f4_darkseed": {
+    "id": "f4_darkseed",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_darkseed/fx_f4_darkseed.webm"
+  },
+  "f4_deathfire_crescendo": {
+    "id": "f4_deathfire_crescendo",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_deathfire_crescendo/fx_f4_deathfire_crescendo.webm"
+  },
+  "f4_doom": {
+    "id": "f4_doom",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_doom/fx_f4_doom.webm"
+  },
+  "f4_nethersummoning": {
+    "id": "f4_nethersummoning",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_nethersummoning/fx_f4_nethersummoning.webm"
+  },
+  "f4_obliterate": {
+    "id": "f4_obliterate",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_obliterate/fx_f4_obliterate.webm"
+  },
+  "f4_riteundervault": {
+    "id": "f4_riteundervault",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_riteundervault/fx_f4_riteundervault.webm"
+  },
+  "f4_shadownova": {
+    "id": "f4_shadownova",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_shadownova/fx_f4_shadownova.webm"
+  },
+  "f4_shadowreflection": {
+    "id": "f4_shadowreflection",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_shadowreflection/fx_f4_shadowreflection.webm"
+  },
+  "f4_soulshatterpact": {
+    "id": "f4_soulshatterpact",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_soulshatterpact/fx_f4_soulshatterpact.webm"
+  },
+  "f4_voidpulse": {
+    "id": "f4_voidpulse",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_voidpulse/fx_f4_voidpulse.webm"
+  },
+  "f4_wraithlingfury": {
+    "id": "f4_wraithlingfury",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_wraithlingfury/fx_f4_wraithlingfury.webm"
+  },
+  "f5_amplification": {
+    "id": "f5_amplification",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_amplification/fx_f5_amplification.webm"
+  },
+  "f5_bbs_egg": {
+    "id": "f5_bbs_egg",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_bbs_egg/fx_f5_bbs_egg.webm"
+  },
+  "f5_bbs_overload": {
+    "id": "f5_bbs_overload",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_bbs_overload/fx_f5_bbs_overload.webm"
+  },
+  "f5_bbs_seekingeye": {
+    "id": "f5_bbs_seekingeye",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_bbs_seekingeye/fx_f5_bbs_seekingeye.webm"
+  },
+  "f5_boundedlife": {
+    "id": "f5_boundedlife",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_boundedlife/fx_f5_boundedlife.webm"
+  },
+  "f5_earthsphere": {
+    "id": "f5_earthsphere",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_earthsphere/fx_f5_earthsphere.webm"
+  },
+  "f5_earthsphere_blue": {
+    "id": "f5_earthsphere_blue",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_earthsphere_blue/fx_f5_earthsphere_blue.webm"
+  },
+  "f5_earthsphere_orange": {
+    "id": "f5_earthsphere_orange",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_earthsphere_orange/fx_f5_earthsphere_orange.webm"
+  },
+  "f5_evolutionaryapex": {
+    "id": "f5_evolutionaryapex",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_evolutionaryapex/fx_f5_evolutionaryapex.webm"
+  },
+  "f5_flashreincarnation": {
+    "id": "f5_flashreincarnation",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_flashreincarnation/fx_f5_flashreincarnation.webm"
+  },
+  "f5_fractalreplication": {
+    "id": "f5_fractalreplication",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_fractalreplication/fx_f5_fractalreplication.webm"
+  },
+  "f5_kinectequilibrium": {
+    "id": "f5_kinectequilibrium",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_kinectequilibrium/fx_f5_kinectequilibrium.webm"
+  },
+  "f5_manaburn": {
+    "id": "f5_manaburn",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_manaburn/fx_f5_manaburn.webm"
+  },
+  "f5_mindsteal": {
+    "id": "f5_mindsteal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_mindsteal/fx_f5_mindsteal.webm"
+  },
+  "f5_naturalselection": {
+    "id": "f5_naturalselection",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_naturalselection/fx_f5_naturalselection.webm"
+  },
+  "f5_primalmojo": {
+    "id": "f5_primalmojo",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_primalmojo/fx_f5_primalmojo.webm"
+  },
+  "f5_tremor": {
+    "id": "f5_tremor",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f5_tremor/fx_f5_tremor.webm"
+  },
+  "f6_bbs_kinectsurge": {
+    "id": "f6_bbs_kinectsurge",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_bbs_kinectsurge/fx_f6_bbs_kinectsurge.webm"
+  },
+  "f6_bbs_stun": {
+    "id": "f6_bbs_stun",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_bbs_stun/fx_f6_bbs_stun.webm"
+  },
+  "f6_bbs_warbird": {
+    "id": "f6_bbs_warbird",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_bbs_warbird/fx_f6_bbs_warbird.webm"
+  },
+  "f6_chromaticcold": {
+    "id": "f6_chromaticcold",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_chromaticcold/fx_f6_chromaticcold.webm"
+  },
+  "f6_cryogenesis": {
+    "id": "f6_cryogenesis",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_cryogenesis/fx_f6_cryogenesis.webm"
+  },
+  "f6_hailstoneprison": {
+    "id": "f6_hailstoneprison",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_hailstoneprison/fx_f6_hailstoneprison.webm"
+  },
+  "f6_markofsolitude": {
+    "id": "f6_markofsolitude",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_markofsolitude/fx_f6_markofsolitude.webm"
+  },
+  "f6_mesmerize": {
+    "id": "f6_mesmerize",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_mesmerize/fx_f6_mesmerize.webm"
+  },
+  "f6_perfectreflection": {
+    "id": "f6_perfectreflection",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_perfectreflection/fx_f6_perfectreflection.webm"
+  },
+  "f6_spiritofthewild": {
+    "id": "f6_spiritofthewild",
+    "src": "modules/duelyst-sprites/assets/fx/fx_f6_spiritofthewild/fx_f6_spiritofthewild.webm"
+  },
+  "firefallground": {
+    "id": "firefallground",
+    "src": "modules/duelyst-sprites/assets/fx/fx_firefallground/fx_firefallground.webm"
+  },
+  "fireslash": {
+    "id": "fireslash",
+    "src": "modules/duelyst-sprites/assets/fx/fx_fireslash/fx_fireslash.webm"
+  },
+  "firetornado": {
+    "id": "firetornado",
+    "src": "modules/duelyst-sprites/assets/fx/fx_firetornado/fx_firetornado.webm"
+  },
+  "flamesphere": {
+    "id": "flamesphere",
+    "src": "modules/duelyst-sprites/assets/fx/fx_flamesphere/fx_flamesphere.webm"
+  },
+  "fluid_puff": {
+    "id": "fluid_puff",
+    "src": "modules/duelyst-sprites/assets/fx/fx_fluid_puff/fx_fluid_puff.webm"
+  },
+  "fluid_card_shape_puff": {
+    "id": "fluid_card_shape_puff",
+    "src": "modules/duelyst-sprites/assets/fx/fx_fluid_card_shape_puff/fluid_card_shape_puff.webm"
+  },
+  "frozen": {
+    "id": "frozen",
+    "src": "modules/duelyst-sprites/assets/fx/fx_frozen/fx_frozen.webm"
+  },
+  "heal": {
+    "id": "heal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_heal/fx_heal.webm"
+  },
+  "heavenlystrike": {
+    "id": "heavenlystrike",
+    "src": "modules/duelyst-sprites/assets/fx/fx_heavenlystrike/fx_heavenlystrike.webm"
+  },
+  "impact_verticalring": {
+    "id": "impact_verticalring",
+    "src": "modules/duelyst-sprites/assets/fx/fx_impact_verticalring/fx_impact_verticalring.webm"
+  },
+  "lightninghitgreen": {
+    "id": "lightninghitgreen",
+    "src": "modules/duelyst-sprites/assets/fx/fx_lightninghitgreen/fx_lightninghitgreen.webm"
+  },
+  "martyrdom": {
+    "id": "martyrdom",
+    "src": "modules/duelyst-sprites/assets/fx/fx_martyrdom/fx_martyrdom.webm"
+  },
+  "multislash_full": {
+    "id": "multislash_full",
+    "src": "modules/duelyst-sprites/assets/fx/fx_multislash_full/fx_multislash_full.webm"
+  },
+  "multislash_intro": {
+    "id": "multislash_intro",
+    "src": "modules/duelyst-sprites/assets/fx/fx_multislash_intro/fx_multislash_intro.webm"
+  },
+  "multislash_outro": {
+    "id": "multislash_outro",
+    "src": "modules/duelyst-sprites/assets/fx/fx_multislash_outro/fx_multislash_outro.webm"
+  },
+  "neutral_riddle": {
+    "id": "neutral_riddle",
+    "src": "modules/duelyst-sprites/assets/fx/fx_neutral_riddle/fx_neutral_riddle.webm"
+  },
+  "plasma": {
+    "blue": {
+      "id": "blueplasma",
+      "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_plasma/blueplasma.webm"
+    },
+    "vertical": {
+      "red": {
+        "id": "redplasma_vertical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_redplasma_vertical/fx_redplasma_vertical.webm"
+      },
+      "blue": {
+        "id": "blueplasma_vertical",
+        "src": "modules/duelyst-sprites/assets/fx/fx_blueplasma_vertical/fx_blueplasma_vertical.webm"
+      }
+    }
+  },
+  "radial_bluenoise": {
+    "id": "radial_bluenoise",
+    "src": "modules/duelyst-sprites/assets/fx/fx_radial_bluenoise/fx_radial_bluenoise.webm"
+  },
+  "redlightning": {
+    "id": "redlightning",
+    "src": "modules/duelyst-sprites/assets/fx/fx_redlightning/fx_redlightning.webm"
+  },
+  "ringswirl": {
+    "id": "ringswirl",
+    "src": "modules/duelyst-sprites/assets/fx/fx_ringswirl/fx_ringswirl.webm"
+  },
+  "roots": {
+    "id": "roots",
+    "src": "modules/duelyst-sprites/assets/fx/fx_roots/fx_roots.webm"
+  },
+  "sandportal": {
+    "id": "sandportal",
+    "src": "modules/duelyst-sprites/assets/fx/fx_sandportal/fx_sandportal.webm"
+  },
+  "searingchasm": {
+    "id": "searingchasm",
+    "src": "modules/duelyst-sprites/assets/fx/fx_searingchasm/fx_searingchasm.webm"
+  },
+  "shadowcreep": {
+    "id": "shadowcreep",
+    "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/fx_shadowcreep.webm"
+  },
+  "slashfrenzy": {
+    "id": "slashfrenzy",
+    "src": "modules/duelyst-sprites/assets/fx/fx_slashfrenzy/fx_slashfrenzy.webm"
+  },
+  "summonlegendary": {
+    "id": "summonlegendary",
+    "src": "modules/duelyst-sprites/assets/fx/fx_summonlegendary/fx_summonlegendary.webm"
+  },
+  "summonmythron": {
+    "id": "summonmythron",
+    "src": "modules/duelyst-sprites/assets/fx/fx_summonmythron/fx_summonmythron.webm"
+  },
+  "teleportblueorb": {
+    "id": "teleportblueorb",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportblueorb/fx_teleportblueorb.webm"
+  },
+  "teleportorangeorb": {
+    "id": "teleportorangeorb",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportorangeorb/fx_teleportorangeorb.webm"
+  },
+  "teleportpurpleorb": {
+    "id": "teleportpurpleorb",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportpurpleorb/fx_teleportpurpleorb.webm"
+  },
+  "teleportrecall": {
+    "id": "teleportrecall",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecall/fx_teleportrecall.webm"
+  },
+  "teleportrecall2": {
+    "id": "teleportrecall2",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecall2/fx_teleportrecall2.webm"
+  },
+  "teleportrecallblue": {
+    "id": "teleportrecallblue",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecallblue/fx_teleportrecallblue.webm"
+  },
+  "teleportrecallgreen": {
+    "id": "teleportrecallgreen",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecallgreen/fx_teleportrecallgreen.webm"
+  },
+  "teleportrecallred": {
+    "id": "teleportrecallred",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecallred/fx_teleportrecallred.webm"
+  },
+  "teleportrecallwhite": {
+    "id": "teleportrecallwhite",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportrecallwhite/fx_teleportrecallwhite.webm"
+  },
+  "teleportyelloworb": {
+    "id": "teleportyelloworb",
+    "src": "modules/duelyst-sprites/assets/fx/fx_teleportyelloworb/fx_teleportyelloworb.webm"
+  },
+  "tornadoswirl": {
+    "id": "tornadoswirl",
+    "src": "modules/duelyst-sprites/assets/fx/fx_tornadoswirl/fx_tornadoswirl.webm"
+  },
+  "vortexswirl": {
+    "id": "vortexswirl",
+    "src": "modules/duelyst-sprites/assets/fx/fx_vortexswirl/fx_vortexswirl.webm"
+  },
+  "winner": {
+    "id": "winner",
+    "src": "modules/duelyst-sprites/assets/fx/fx_winner/fx_winner.webm"
+  },
+  "bloodground": {
+    "bloodground2": {
+      "id": "bloodground2",
+      "src": "modules/duelyst-sprites/assets/fx/fx_bloodground/bloodground2.webm"
+    },
+    "bloodground3": {
+      "id": "bloodground3",
+      "src": "modules/duelyst-sprites/assets/fx/fx_bloodground/bloodground3.webm"
+    },
+    "bloodground4": {
+      "id": "bloodground4",
+      "src": "modules/duelyst-sprites/assets/fx/fx_bloodground/bloodground4.webm"
+    },
+    "bloodground": {
+      "id": "bloodground",
+      "src": "modules/duelyst-sprites/assets/fx/fx_bloodground/bloodground.webm"
+    }
+  },
+  "flashfreeze": {
+    "flashfreeze_appear": {
+      "id": "flashfreeze_appear",
+      "src": "modules/duelyst-sprites/assets/fx/f6_flashfreeze/flashfreeze_appear.webm"
+    },
+    "flashfreeze_disappear": {
+      "id": "flashfreeze_disappear",
+      "src": "modules/duelyst-sprites/assets/fx/f6_flashfreeze/flashfreeze_disappear.webm"
+    },
+    "flashfreeze_idle": {
+      "id": "flashfreeze_idle",
+      "src": "modules/duelyst-sprites/assets/fx/f6_flashfreeze/flashfreeze_idle.webm"
+    }
+  },
+  "collision": {
+    "collisionsparks": {
+      "id": "collisionsparks",
+      "src": "modules/duelyst-sprites/assets/fx/fx_collision/collisionsparks.webm"
+    },
+    "collisionsparksblue": {
+      "id": "collisionsparksblue",
+      "src": "modules/duelyst-sprites/assets/fx/fx_collision/collisionsparksblue.webm"
+    },
+    "collisionsparksgreen": {
+      "id": "collisionsparksgreen",
+      "src": "modules/duelyst-sprites/assets/fx/fx_collision/collisionsparksgreen.webm"
+    },
+    "collisionsparksred": {
+      "id": "collisionsparksred",
+      "src": "modules/duelyst-sprites/assets/fx/fx_collision/collisionsparksred.webm"
+    },
+    "collisionsparkspurple": {
+      "id": "collisionsparkspurple",
+      "src": "modules/duelyst-sprites/assets/fx/fx_collision/collisionsparkspurple.webm"
+    }
+  },
+  "defense": {
+    "floatingshield": {
+      "id": "floatingshield",
+      "src": "modules/duelyst-sprites/assets/fx/fx_defense/floatingshield.webm"
+    },
+    "forcefield": {
+      "id": "forcefield",
+      "src": "modules/duelyst-sprites/assets/fx/fx_defense/forcefield.webm"
+    }
+  },
+  "casterprojectile": {
+    "projectile": {
+      "id": "f1casterprojectile",
+      "src": "modules/duelyst-sprites/assets/fx/fx_f1_casterprojectile/f1casterprojectile.webm"
+    },
+    "charge": {
+      "id": "f1casterprojectilecharge",
+      "src": "modules/duelyst-sprites/assets/fx/fx_f1_casterprojectile/f1casterprojectilecharge.webm"
+    }
+  },
+  "fairiefire": {
+    "black": {
+      "id": "fairiefireblack",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefireblack.webm"
+    },
+    "blue": {
+      "id": "fairiefireblue",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefireblue.webm"
+    },
+    "green": {
+      "id": "fairiefiregreen",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefiregreen.webm"
+    },
+    "purple": {
+      "id": "fairiefirepurple",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefirepurple.webm"
+    },
+    "red": {
+      "id": "fairiefirered",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefirered.webm"
+    },
+    "yellow": {
+      "id": "fairiefireyellow",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fairiefire/fairiefireyellow.webm"
+    }
+  },
+  "fx_impact": {
+    "fire": {
+      "id": "fireimpact",
+      "src": "modules/duelyst-sprites/assets/fx/fx_fireimpact/fx_fireimpact.webm"
+    },
+    "blue": {
+      "medium": {
+        "id": "impactbluemedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactbluemedium.webm"
+      },
+      "big": {
+        "id": "impactbluebig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactbluebig.webm"
+      },
+      "small": {
+        "id": "impactbluesmall",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactbluesmall.webm"
+      }
+    },
+    "orange": {
+      "big": {
+        "id": "impactorangebig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactorangebig.webm"
+      },
+      "small": {
+        "id": "impactorangesmall",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactorangesmall.webm"
+      },
+      "medium": {
+        "id": "impactorangemedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactorangemedium.webm"
+      }
+    },
+    "white": {
+      "brightmedium": {
+        "id": "impactbrightwhitemedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactbrightwhitemedium.webm"
+      }
+    },
+    "green": {
+      "big": {
+        "id": "impactgreenbig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactgreenbig.webm"
+      },
+      "medium": {
+        "id": "impactgreenmedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactgreenmedium.webm"
+      },
+      "small": {
+        "id": "impactgreensmall",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactgreensmall.webm"
+      }
+    },
+    "red": {
+      "big": {
+        "id": "impactredbig",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactredbig.webm"
+      },
+      "medium": {
+        "id": "impactredmedium",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactredmedium.webm"
+      },
+      "small": {
+        "id": "impactredsmall",
+        "src": "modules/duelyst-sprites/assets/fx/fx_impact/impactredsmall.webm"
+      }
+    }
+  },
+  "smoke": {
+    "explosion": {
+      "darkplume": {
+        "id": "explosiondarkplume",
+        "src": "modules/duelyst-sprites/assets/fx/fx_smoke/explosiondarkplume.webm"
+      },
+      "white": {
+        "medium": {
+          "id": "explosionwhitesmokemedium",
+          "src": "modules/duelyst-sprites/assets/fx/fx_smoke/explosionwhitesmokemedium.webm"
+        }
+      }
+    },
+    "footstepdust": {
+      "id": "footstepdust",
+      "src": "modules/duelyst-sprites/assets/fx/fx_smoke/footstepdust.webm"
+    },
+    "ground": {
+      "id": "smokeground",
+      "src": "modules/duelyst-sprites/assets/fx/fx_smoke/smokeground.webm"
+    }
+  },
+  "swirl": {
+    "id": "swirl",
+    "src": "modules/duelyst-sprites/assets/fx/fx_swirl/swirlloop.webm"
+  }
+}
