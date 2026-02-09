@@ -3,6 +3,9 @@
 ![Supported Foundry Version](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fversion%3Fstyle%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FUnarekin%2FFoundryVTT-Duelyst-Sprites%2Frefs%2Fheads%2Fmain%2Fmodule.json)
 ![Supported Game Systems](https://img.shields.io/endpoint?url=https%3A%2F%2Ffoundryshields.com%2Fsystem%3FnameType%3Dfull%26showVersion%3D1%26style%3Dflat%26url%3Dhttps%3A%2F%2Fraw.githubusercontent.com%2FUnarekin%2FFoundryVTT-Duelyst-Sprites%2Frefs%2Fheads%2Fmain%2Fmodule.json)
 
+![GitHub Downloads (specific asset, latest release)](https://img.shields.io/github/downloads/Unarekin/FoundryVTT-Duelyst-Sprites/latest/module.zip)
+[![Forge Installs](https://img.shields.io/badge/dynamic/json?label=Forge%20Installs&query=package.installs&suffix=%25&url=https%3A%2F%2Fforge-vtt.com%2Fapi%2Fbazaar%2Fpackage%2Fduelyst-sprites)](https://forge-vtt.com/bazaar#package=duelyst-sprites) 
+
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white)](https://discord.gg/MdvvxtnCRJ)
 
 # Duelyst Sprites
@@ -45,6 +48,7 @@ The contents of this project, aside from the assets from [Duelyst](https://githu
 [Duelyst](https://github.com/open-duelyst/duelyst) and its assets are licensed under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license
 
 This module includes images, videos, sounds, etc. that are modified versions of the [Duelyst](https://github.com/open-duelyst/duelyst) assets -- they have been scaled up in size, and converted to formats usable in Foundry.  These assets are released under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license.  You will find a copy of the license in the folders where these assets are contained.
+
 
 
 
