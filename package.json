@@ -1,7 +1,7 @@
 {
-  "name": "foundryvtt-module-template",
+  "name": "foundryvtt-duelyst-sprites",
   "version": "1.0.0",
-  "description": "",
+  "description": "A module for FoundryVTT that provides assets from the open source game Duelyst",
   "main": "dist/module.js",
   "scripts": {
     "build": "node build.mjs",
@@ -11,17 +11,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Unarekin/FoundryVTT-Module-Template.git"
+    "url": "git+https://github.com/Unarekin/FoundryVTT-Duelyst-Sprites.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Unarekin",
+  "license": "MIT",
   "type": "commonjs",
   "types": "./types/module.d.ts",
   "bugs": {
-    "url": "https://github.com/Unarekin/FoundryVTT-Module-Template/issues"
+    "url": "https://github.com/Unarekin/FoundryVTT-Duelyst-Sprites/issues"
   },
-  "homepage": "https://github.com/Unarekin/FoundryVTT-Module-Template#readme",
+  "homepage": "https://github.com/Unarekin/FoundryVTT-Duelyst-Sprites#readme",
   "devDependencies": {
     "@eslint/js": "^9.11.0",
     "@foundryvtt/foundryvtt-cli": "^1.1.0",
