@@ -20,6 +20,7 @@ This module makes using assets from [Duelyst](https://github.com/open-duelyst/du
   - Includes preset configurations for [Theatre Inserts](https://foundryvtt.com/packages/theatre) and [Sprite Animations](https://foundryvtt.com/packages/sprite-animations)
 - Includes 204 different spell effects
   - Effects are also added to Sequencer's effect database
+- 670 sound effects
 
 ## Actor Creator
 Included with the module is an Actor Creator macro, to make setting up actors using these sprites as quick and simple as possible.
@@ -44,5 +45,6 @@ The contents of this project, aside from the assets from [Duelyst](https://githu
 [Duelyst](https://github.com/open-duelyst/duelyst) and its assets are licensed under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license
 
 This module includes images, videos, sounds, etc. that are modified versions of the [Duelyst](https://github.com/open-duelyst/duelyst) assets -- they have been scaled up in size, and converted to formats usable in Foundry.  These assets are released under the [Creative Commons Zero v1.0 Universal](https://github.com/open-duelyst/duelyst/blob/main/LICENSE) license.  You will find a copy of the license in the folders where these assets are contained.
+
 
 
