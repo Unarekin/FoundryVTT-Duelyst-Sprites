@@ -17,7 +17,7 @@
       "format": "esm"
     },
     "src/applications/ActorCreator.ts": {
-      "bytes": 6054,
+      "bytes": 6137,
       "imports": [
         {
           "path": "types",
@@ -160,7 +160,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2129764
+      "bytes": 2129902
     },
     "dist/module.js": {
       "imports": [],
@@ -171,7 +171,7 @@
           "bytesInOutput": 8160
         },
         "src/applications/ActorCreator.ts": {
-          "bytesInOutput": 5855
+          "bytesInOutput": 5941
         },
         "src/applications/index.ts": {
           "bytesInOutput": 129
@@ -198,7 +198,7 @@
           "bytesInOutput": 551
         }
       },
-      "bytes": 1524029
+      "bytes": 1524115
     },
     "dist/styles/module.css.map": {
       "imports": [],

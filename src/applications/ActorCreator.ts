@@ -114,7 +114,11 @@ export class ActorCreatorApplication extends foundry.applications.api.Handlebars
   protected async _prepareContext(options: foundry.applications.api.ApplicationV2.RenderOptions): Promise<ActorCreatorContext> {
     const context = await super._prepareContext(options);
 
-    const picker = await foundry.applications.apps.FilePicker.implementation.browse("data", `modules/${__MODULE_ID__}/assets/units`);
+    const pickerClass = game.release?.isNewer("13") ? foundry.applications.apps.FilePicker.implementation : FilePicker;
+
+    const picker = await pickerClass.browse("data", `modules/${__MODULE_ID__}/assets/units`);
+
+
     const dirs = picker.dirs.map(dir => {
       const split = dir.split("/");
       return split[split.length - 1];
