@@ -47,3 +47,7 @@ export interface Faction {
   description: string;
 }
 
+export interface FX {
+  id: string;
+  src: string;
+}

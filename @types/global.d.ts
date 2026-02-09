@@ -1,3 +1,4 @@
+import { FX } from "types";
 import { Unit, Faction } from "../types";
 
 
@@ -15,7 +16,8 @@ declare global {
   interface CONFIG {
     DuelystSprites: {
       units: Record<string, Unit>,
-      factions: Record<number, Faction>
+      factions: Record<number, Faction>,
+      fx: Record<string, FX>
     }
   }
 }

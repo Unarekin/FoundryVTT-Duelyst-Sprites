@@ -81,6 +81,34 @@ export async function postProcessPlist(plist, baseDir, outputDir) {
     }
   }
 
+  // fileBar.update({ task: "Creating idle.webp..." });
+  // await convertFfmpeg(
+  //   path.join(actualOutputPath, "frames", `${fileName}_idle_%03d.png`),
+  //   path.join(actualOutputPath, "idle.webp"),
+  //   ["-r 10"],
+  //   ["-loop 0"],
+  // );
+  // fileBar.increment();
+
+  // fileBar.update({ task: "Creating idle.gif..." });
+  // const gifFiles = (
+  //   await fs.readdir(path.join(actualOutputPath, "frames"))
+  // ).filter(file => file.includes("_idle_"));
+  // const gifFrames = [];
+  // for (const file of gifFiles) {
+  //   const image = await Jimp.read(
+  //     path.join(actualOutputPath, "frames", file),
+  //   );
+  //   const gifFrame = new GifFrame(new BitmapImage(image.bitmap), {
+  //     delayCentisecs: 10,
+  //   });
+  //   gifFrames.push(gifFrame);
+  // }
+  // await GifUtil.write(path.join(actualOutputPath, "idle.gif"), gifFrames, {
+  //   loops: 0,
+  // });
+  // fileBar.increment();
+
   const gif = await GifUtil.read(
     path.join(ASSET_PATH, "units", unitId, "idle.gif"),
   );

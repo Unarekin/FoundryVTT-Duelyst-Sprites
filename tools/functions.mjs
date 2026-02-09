@@ -68,3 +68,15 @@ export function createJimp() {
     plugins: defaultPlugins,
   });
 }
+
+export async function writeIndex(config) {
+  for (const [key, value] of Object.entries(config)) {
+    const outDir = path.join(
+      import.meta.dirname,
+      "..",
+      "src",
+      `index.${key}.json`,
+    );
+    await fs.writeFile(outDir, JSON.stringify(value, null, 2));
+  }
+}

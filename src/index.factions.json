@@ -1,0 +1,37 @@
+{
+  "1": {
+    "name": "Lyonar Kingdoms",
+    "abbr": "Lyonar",
+    "description": "The Kingdom of Fallen Earth"
+  },
+  "2": {
+    "name": "Songhai Empire",
+    "abbr": "Songhai",
+    "description": "The Kingdom of Blossom Spring"
+  },
+  "3": {
+    "name": "Vetruvian Imperium",
+    "abbr": "Vetruvian",
+    "description": "The Kingdom of Summer Light"
+  },
+  "4": {
+    "name": "Abyssian Host",
+    "abbr": "Abyssian",
+    "description": "The Kingdom of Winter Darkness"
+  },
+  "5": {
+    "name": "Magmar Aspects",
+    "abbr": "Magmar",
+    "description": "The First Guardians"
+  },
+  "6": {
+    "name": "Vanar Kindred",
+    "abbr": "Vanar",
+    "description": "The First Protectors"
+  },
+  "-1": {
+    "name": "Neutral",
+    "abbr": "Neutral",
+    "description": ""
+  }
+}

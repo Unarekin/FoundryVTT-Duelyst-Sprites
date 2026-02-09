@@ -4,7 +4,8 @@ import { promises as fs } from "fs";
 import { downloadFile, extractFile } from "./download.mjs";
 import { fileExists } from "./functions.mjs";
 import { parsePlistDirectory } from "./plist.mjs";
-import { postProcessPlist } from "./units.mjs";
+import { postProcessPlist as postProcessUnitPlist } from "./units.mjs";
+import { postProcessPlist as postProcessFXPlist } from "./fx.mjs";
 import { ASSET_PATH, DOWNLOAD_DIR, DATA } from "./consts.mjs";
 
 try {
@@ -32,9 +33,13 @@ try {
   // await extractFile(ZIP_PATH, DOWNLOAD_DIR);
 
   console.log("Processing plists...");
+  // await parsePlistDirectory(
+  //   path.join(DOWNLOAD_DIR, "duelyst-main", "units"),
+  //   postProcessUnitPlist,
+  // );
   await parsePlistDirectory(
-    path.join(DOWNLOAD_DIR, "duelyst-main", "units"),
-    postProcessPlist,
+    path.join(DOWNLOAD_DIR, "duelyst-main", "fx"),
+    postProcessFXPlist,
   );
 } catch (err) {
   console.error(err);

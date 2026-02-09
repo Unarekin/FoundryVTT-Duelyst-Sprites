@@ -3,7 +3,12 @@ import { ASSET_PATH, DATA, DOWNLOAD_DIR } from "./consts.mjs";
 import path from "path";
 import cliProgress from "cli-progress";
 import PList from "plist";
-import { convertFfmpeg, fileExists, fitLabel } from "./functions.mjs";
+import {
+  convertFfmpeg,
+  fileExists,
+  fitLabel,
+  writeIndex,
+} from "./functions.mjs";
 import { ResizeStrategy } from "jimp";
 import { GifUtil, GifFrame, BitmapImage } from "gifwrap";
 import { extractFrameCoords, createJimp } from "./functions.mjs";
@@ -13,6 +18,7 @@ const Jimp = createJimp();
 const FILE_DISPLAY_LENGTH = 20;
 
 export async function parsePlistDirectory(dir, postFunc) {
+  let overallBar;
   try {
     const outputDir = path.join(ASSET_PATH, path.basename(dir));
 
@@ -34,7 +40,7 @@ export async function parsePlistDirectory(dir, postFunc) {
       cliProgress.Presets.shades_grey,
     );
 
-    const overallBar = multibar.create(files.length + 1, 0, {
+    overallBar = multibar.create(files.length + 1, 0, {
       task: fitLabel("Preparing...", 20),
       file: fitLabel(path.basename(dir), FILE_DISPLAY_LENGTH),
     });
@@ -42,8 +48,8 @@ export async function parsePlistDirectory(dir, postFunc) {
     if (process.argv.includes("--force")) {
       // Clean dir
       await fs.rm(outputDir, { recursive: true, force: true });
-      await fs.mkdir(outputDir, { recursive: true });
     }
+    await fs.mkdir(outputDir, { recursive: true });
 
     const license = (
       await fs.readFile(path.join(DOWNLOAD_DIR, "LICENSE"))
@@ -60,10 +66,7 @@ export async function parsePlistDirectory(dir, postFunc) {
         overallBar,
       );
 
-      await fs.writeFile(
-        path.join(import.meta.dirname, "..", "src", "index.json"),
-        JSON.stringify(DATA, null, 2),
-      );
+      await writeIndex(DATA);
 
       overallBar.increment();
     }
@@ -72,7 +75,9 @@ export async function parsePlistDirectory(dir, postFunc) {
     });
   } catch (err) {
     if (overallBar) overallBar.stop();
+    console.error("\n");
     console.error(err);
+    process.exit();
   }
 }
 
@@ -80,12 +85,11 @@ async function parsePlist(file, outDir, postFunc, multiBar, overallBar) {
   const fileName = path.basename(file, path.extname(file));
   const actualOutputPath = path.join(outDir, fileName);
   let fileBar;
+  const plist = PList.parse((await fs.readFile(file)).toString());
   if (
     process.argv.includes("--force") ||
     !(await fileExists(actualOutputPath))
   ) {
-    const plist = PList.parse((await fs.readFile(file)).toString());
-
     const animationFrames = Object.entries(plist.frames);
 
     const animationNames = Object.keys(plist.frames)
@@ -131,45 +135,22 @@ async function parsePlist(file, outDir, postFunc, multiBar, overallBar) {
       fileBar.increment();
     }
 
-    fileBar.update({ task: "Creating idle.webp..." });
-    await convertFfmpeg(
-      path.join(actualOutputPath, "frames", `${fileName}_idle_%03d.png`),
-      path.join(actualOutputPath, "idle.webp"),
-      ["-r 10"],
-      ["-loop 0"],
-    );
-    fileBar.increment();
-
-    fileBar.update({ task: "Creating idle.gif..." });
-    const gifFiles = (
-      await fs.readdir(path.join(actualOutputPath, "frames"))
-    ).filter(file => file.includes("_idle_"));
-    const gifFrames = [];
-    for (const file of gifFiles) {
-      const image = await Jimp.read(
-        path.join(actualOutputPath, "frames", file),
-      );
-      const gifFrame = new GifFrame(new BitmapImage(image.bitmap), {
-        delayCentisecs: 10,
-      });
-      gifFrames.push(gifFrame);
-    }
-    await GifUtil.write(path.join(actualOutputPath, "idle.gif"), gifFrames, {
-      loops: 0,
-    });
-    fileBar.increment();
-
     fileBar.update({ task: "Converting WEBM..." });
+    const baseFileName = path.basename(file, path.extname(file));
+
     for (const animation of animationNames) {
       await convertFfmpeg(
         path.join(
           actualOutputPath,
           "frames",
-          `${path.basename(file, path.extname(file))}_${animation}_%03d.png`,
+          `${baseFileName}_${animation ? `${animation}_` : ""}%03d.png`,
         ),
-        path.join(actualOutputPath, `${animation}.webm`),
-        ["-r 10", "-hwaccel auto"],
-        ["-vcodec libvpx-vp9"],
+        path.join(
+          actualOutputPath,
+          `${animation ? animation : baseFileName}.webm`,
+        ),
+        ["-framerate 10", "-hwaccel auto"],
+        ["-vcodec libvpx-vp9", "-lossless 1", "-pix_fmt yuva420p"],
       );
 
       fileBar.increment();

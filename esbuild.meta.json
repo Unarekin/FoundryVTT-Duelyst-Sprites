@@ -48,8 +48,30 @@
       ],
       "format": "esm"
     },
+    "src/sequencer.json": {
+      "bytes": 23521,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "src/sequencer.ts": {
+      "bytes": 261,
+      "imports": [
+        {
+          "path": "src/sequencer.json",
+          "kind": "import-statement",
+          "original": "./sequencer.json",
+          "with": {
+            "type": "json"
+          }
+        }
+      ],
+      "format": "cjs"
+    },
     "src/types.ts": {
-      "bytes": 1097,
+      "bytes": 1149,
       "imports": [
         {
           "path": "SpriteAnimations/types/interfaces",
@@ -59,8 +81,24 @@
       ],
       "format": "esm"
     },
-    "src/index.json": {
-      "bytes": 1323567,
+    "src/index.units.json": {
+      "bytes": 1231371,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "src/index.fx.json": {
+      "bytes": 34851,
+      "imports": [],
+      "format": "esm",
+      "with": {
+        "type": "json"
+      }
+    },
+    "src/index.factions.json": {
+      "bytes": 773,
       "imports": [],
       "format": "esm",
       "with": {
@@ -68,7 +106,7 @@
       }
     },
     "src/module.ts": {
-      "bytes": 327,
+      "bytes": 581,
       "imports": [
         {
           "path": "src/applications/index.ts",
@@ -76,14 +114,35 @@
           "original": "./applications"
         },
         {
+          "path": "src/sequencer.ts",
+          "kind": "import-statement",
+          "original": "./sequencer"
+        },
+        {
           "path": "src/types.ts",
           "kind": "import-statement",
           "original": "./types"
         },
         {
-          "path": "src/index.json",
+          "path": "src/index.units.json",
           "kind": "import-statement",
-          "original": "./index.json",
+          "original": "./index.units.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "src/index.fx.json",
+          "kind": "import-statement",
+          "original": "./index.fx.json",
+          "with": {
+            "type": "json"
+          }
+        },
+        {
+          "path": "src/index.factions.json",
+          "kind": "import-statement",
+          "original": "./index.factions.json",
           "with": {
             "type": "json"
           }
@@ -101,7 +160,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2152162
+      "bytes": 2129764
     },
     "dist/module.js": {
       "imports": [],
@@ -117,17 +176,29 @@
         "src/applications/index.ts": {
           "bytesInOutput": 129
         },
+        "src/sequencer.json": {
+          "bytesInOutput": 24826
+        },
+        "src/sequencer.ts": {
+          "bytesInOutput": 247
+        },
         "src/types.ts": {
           "bytesInOutput": 82
         },
-        "src/index.json": {
-          "bytesInOutput": 1534130
+        "src/index.units.json": {
+          "bytesInOutput": 1441770
+        },
+        "src/index.fx.json": {
+          "bytesInOutput": 39455
+        },
+        "src/index.factions.json": {
+          "bytesInOutput": 1092
         },
         "src/module.ts": {
-          "bytesInOutput": 304
+          "bytesInOutput": 551
         }
       },
-      "bytes": 1549262
+      "bytes": 1524029
     },
     "dist/styles/module.css.map": {
       "imports": [],
