@@ -19,7 +19,10 @@
   "carddraw": "modules/duelyst-sprites/assets/fx/fx_carddraw/fx_carddraw.webm",
   "chainlightning": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm",
   "clawslash": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm",
-  "cleanse": "modules/duelyst-sprites/assets/fx/fx_cleanse/fx_cleanse.webm",
+  "cleanse": {
+    "burst": "modules/duelyst-sprites/assets/fx/fx_cleanse/burst.webm",
+    "ripples": "modules/duelyst-sprites/assets/fx/fx_cleanse/ripples.webm"
+  },
   "crossslash": "modules/duelyst-sprites/assets/fx/fx_crossslash/fx_crossslash.webm",
   "crossslash_x": "modules/duelyst-sprites/assets/fx/fx_crossslash_x/fx_crossslash_x.webm",
   "damagedecal": "modules/duelyst-sprites/assets/fx/fx_damagedecal/fx_damagedecal.webm",

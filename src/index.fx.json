@@ -80,8 +80,14 @@
     "src": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm"
   },
   "cleanse": {
-    "id": "cleanse",
-    "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/fx_cleanse.webm"
+    "burst": {
+      "id": "burst",
+      "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/burst.webm"
+    },
+    "ripples": {
+      "id": "ripples",
+      "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/ripples.webm"
+    }
   },
   "crossslash": {
     "id": "crossslash",
