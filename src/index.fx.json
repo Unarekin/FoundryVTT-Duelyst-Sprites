@@ -80,8 +80,14 @@
     "src": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm"
   },
   "cleanse": {
-    "id": "cleanse",
-    "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/fx_cleanse.webm"
+    "burst": {
+      "id": "burst",
+      "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/burst.webm"
+    },
+    "ripples": {
+      "id": "ripples",
+      "src": "modules/duelyst-sprites/assets/fx/fx_cleanse/ripples.webm"
+    }
   },
   "crossslash": {
     "id": "crossslash",
@@ -110,14 +116,6 @@
   "disintegrate": {
     "id": "disintegrate",
     "src": "modules/duelyst-sprites/assets/fx/fx_disintegrate/fx_disintegrate.webm"
-  },
-  "doom": {
-    "id": "doom",
-    "src": "modules/duelyst-sprites/assets/fx/fx_doom/fx_doom.webm"
-  },
-  "electrical": {
-    "id": "electrical",
-    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_electrical/electrical.webm"
   },
   "electricsphere": {
     "id": "electricsphere",
