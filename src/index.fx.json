@@ -117,14 +117,6 @@
     "id": "disintegrate",
     "src": "modules/duelyst-sprites/assets/fx/fx_disintegrate/fx_disintegrate.webm"
   },
-  "doom": {
-    "id": "doom",
-    "src": "modules/duelyst-sprites/assets/fx/fx_doom/fx_doom.webm"
-  },
-  "electrical": {
-    "id": "electrical",
-    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_electrical/electrical.webm"
-  },
   "electricsphere": {
     "id": "electricsphere",
     "src": "modules/duelyst-sprites/assets/fx/fx_electricsphere/fx_electricsphere.webm"

@@ -30,8 +30,6 @@
   "distortion_hex_shield": "modules/duelyst-sprites/assets/fx/fx_distortion_hex_shield/fx_distortion_hex_shield.webm",
   "distortion_water_bubble": "modules/duelyst-sprites/assets/fx/fx_distortion_water_bubble/fx_distortion_water_bubble.webm",
   "disintegrate": "modules/duelyst-sprites/assets/fx/fx_disintegrate/fx_disintegrate.webm",
-  "doom": "modules/duelyst-sprites/assets/fx/fx_doom/fx_doom.webm",
-  "electrical": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_electrical/electrical.webm",
   "electricsphere": "modules/duelyst-sprites/assets/fx/fx_electricsphere/fx_electricsphere.webm",
   "energyhaloground": "modules/duelyst-sprites/assets/fx/fx_energyhaloground/fx_energyhaloground.webm",
   "explosion": {
