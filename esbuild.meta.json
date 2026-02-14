@@ -82,7 +82,7 @@
       "format": "esm"
     },
     "src/context.ts": {
-      "bytes": 2675,
+      "bytes": 3614,
       "imports": [
         {
           "path": "src/applications/UnitPresetBrowser.ts",
@@ -181,7 +181,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2133832
+      "bytes": 2135307
     },
     "dist/module.js": {
       "imports": [],
@@ -207,7 +207,7 @@
           "bytesInOutput": 82
         },
         "src/context.ts": {
-          "bytesInOutput": 2439
+          "bytesInOutput": 3215
         },
         "src/index.units.json": {
           "bytesInOutput": 1441770
@@ -222,7 +222,7 @@
           "bytesInOutput": 606
         }
       },
-      "bytes": 1526428
+      "bytes": 1527204
     },
     "dist/styles/module.css.map": {
       "imports": [],
