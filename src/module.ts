@@ -1,6 +1,7 @@
 import { ActorCreatorApplication } from "./applications"
 import "./sequencer";
 import "./types";
+import "./context";
 
 // import config from "./index.json" with { type: "json"};
 
@@ -19,7 +20,4 @@ Hooks.on("init", () => {
     ActorCreatorApplication,
   };
   (CONFIG as unknown as Record<string, unknown>).DuelystSprites = config;
-
-
-
 });

@@ -1,5 +1,16 @@
 {
   "DUELYSTSPRITES": {
+    "CONTEXT": {
+      "ASSIGN": "Assign Duelyst Sprite",
+      "CONFIRM": {
+        "MESSAGE": "Override the following properties on {name}:",
+        "NAME": "Name",
+        "PORTRAIT": "Actor Portrait",
+        "TOKENIMAGE": "Token Image",
+        "ANIMATIONS": "Sprite Animations Settings",
+        "THEATREINSERT": "Theatre Insert Settings"
+      }
+    },
     "ACTORCREATOR": {
       "TITLE": "Actor Creator",
       "DESCRIPTION": "This dialog will allow you to create a preconfigured actor using art assets contained in the Duelyst Sprites module.",
