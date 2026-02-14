@@ -81,6 +81,22 @@
       ],
       "format": "esm"
     },
+    "src/context.ts": {
+      "bytes": 3614,
+      "imports": [
+        {
+          "path": "src/applications/UnitPresetBrowser.ts",
+          "kind": "import-statement",
+          "original": "applications/UnitPresetBrowser"
+        },
+        {
+          "path": "types",
+          "kind": "import-statement",
+          "external": true
+        }
+      ],
+      "format": "cjs"
+    },
     "src/index.units.json": {
       "bytes": 1231371,
       "imports": [],
@@ -106,7 +122,7 @@
       }
     },
     "src/module.ts": {
-      "bytes": 581,
+      "bytes": 598,
       "imports": [
         {
           "path": "src/applications/index.ts",
@@ -122,6 +138,11 @@
           "path": "src/types.ts",
           "kind": "import-statement",
           "original": "./types"
+        },
+        {
+          "path": "src/context.ts",
+          "kind": "import-statement",
+          "original": "./context"
         },
         {
           "path": "src/index.units.json",
@@ -160,7 +181,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2129671
+      "bytes": 2135307
     },
     "dist/module.js": {
       "imports": [],
@@ -185,6 +206,9 @@
         "src/types.ts": {
           "bytesInOutput": 82
         },
+        "src/context.ts": {
+          "bytesInOutput": 3215
+        },
         "src/index.units.json": {
           "bytesInOutput": 1441770
         },
@@ -195,10 +219,10 @@
           "bytesInOutput": 1092
         },
         "src/module.ts": {
-          "bytesInOutput": 551
+          "bytesInOutput": 606
         }
       },
-      "bytes": 1523913
+      "bytes": 1527204
     },
     "dist/styles/module.css.map": {
       "imports": [],
