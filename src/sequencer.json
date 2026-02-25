@@ -17,7 +17,7 @@
   "bouldersphere": "modules/duelyst-sprites/assets/fx/fx_bouldersphere/fx_bouldersphere.webm",
   "buff": "modules/duelyst-sprites/assets/fx/fx_buff/fx_buff.webm",
   "carddraw": "modules/duelyst-sprites/assets/fx/fx_carddraw/fx_carddraw.webm",
-  "chainlightning": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm",
+  "chainlightning": "/modules/duelyst-sprites/assets/fx/fx_chainlightning/chainlightningblue.webm",
   "clawslash": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm",
   "cleanse": {
     "burst": "modules/duelyst-sprites/assets/fx/fx_cleanse/burst.webm",
@@ -182,7 +182,7 @@
   "multislash_outro": "modules/duelyst-sprites/assets/fx/fx_multislash_outro/fx_multislash_outro.webm",
   "neutral_riddle": "modules/duelyst-sprites/assets/fx/fx_neutral_riddle/fx_neutral_riddle.webm",
   "plasma": {
-    "blue": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_plasma/blueplasma.webm",
+    "blue": "/modules/duelyst-sprites/assets/fx/fx_plasma/blueplasma.webm",
     "vertical": {
       "red": "modules/duelyst-sprites/assets/fx/fx_redplasma_vertical/fx_redplasma_vertical.webm",
       "blue": "modules/duelyst-sprites/assets/fx/fx_blueplasma_vertical/fx_blueplasma_vertical.webm"

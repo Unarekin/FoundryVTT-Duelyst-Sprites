@@ -73,7 +73,7 @@
   },
   "chainlightning": {
     "id": "chainlightning",
-    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm"
+    "src": "/modules/duelyst-sprites/assets/fx/fx_chainlightning/chainlightningblue.webm"
   },
   "clawslash": {
     "id": "clawslash",
@@ -688,7 +688,7 @@
   "plasma": {
     "blue": {
       "id": "blueplasma",
-      "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_plasma/blueplasma.webm"
+      "src": "/modules/duelyst-sprites/assets/fx/fx_plasma/blueplasma.webm"
     },
     "vertical": {
       "red": {
