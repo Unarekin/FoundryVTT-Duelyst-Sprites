@@ -73,7 +73,7 @@
   },
   "chainlightning": {
     "id": "chainlightning",
-    "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm"
+    "src": "/modules/duelyst-sprites/assets/fx/fx_chainlightning/chainlightningblue.webm"
   },
   "clawslash": {
     "id": "clawslash",
@@ -511,7 +511,7 @@
   },
   "f4_wraithlingfury": {
     "id": "f4_wraithlingfury",
-    "src": "modules/duelyst-sprites/assets/fx/fx_f4_wraithlingfury/fx_f4_wraithlingfury.webm"
+    "src": "modules/duelyst-sprites/assets/fx/fx_f4_wraithlingfury/wraithlingfury.webm"
   },
   "f5_amplification": {
     "id": "f5_amplification",
@@ -688,7 +688,7 @@
   "plasma": {
     "blue": {
       "id": "blueplasma",
-      "src": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_plasma/blueplasma.webm"
+      "src": "/modules/duelyst-sprites/assets/fx/fx_plasma/blueplasma.webm"
     },
     "vertical": {
       "red": {
@@ -726,8 +726,14 @@
     "src": "modules/duelyst-sprites/assets/fx/fx_searingchasm/fx_searingchasm.webm"
   },
   "shadowcreep": {
-    "id": "shadowcreep",
-    "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/fx_shadowcreep.webm"
+    "spawn": {
+      "id": "shadowcreep_spawn",
+      "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/spawn.webm"
+    },
+    "idle": {
+      "id": "shadowcreep_idle",
+      "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/idle.webm"
+    }
   },
   "slashfrenzy": {
     "id": "slashfrenzy",
