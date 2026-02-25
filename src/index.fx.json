@@ -726,8 +726,14 @@
     "src": "modules/duelyst-sprites/assets/fx/fx_searingchasm/fx_searingchasm.webm"
   },
   "shadowcreep": {
-    "id": "shadowcreep",
-    "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/fx_shadowcreep.webm"
+    "spawn": {
+      "id": "shadowcreep_spawn",
+      "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/spawn.webm"
+    },
+    "idle": {
+      "id": "shadowcreep_idle",
+      "src": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/idle.webm"
+    }
   },
   "slashfrenzy": {
     "id": "slashfrenzy",

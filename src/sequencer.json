@@ -194,7 +194,10 @@
   "roots": "modules/duelyst-sprites/assets/fx/fx_roots/fx_roots.webm",
   "sandportal": "modules/duelyst-sprites/assets/fx/fx_sandportal/fx_sandportal.webm",
   "searingchasm": "modules/duelyst-sprites/assets/fx/fx_searingchasm/fx_searingchasm.webm",
-  "shadowcreep": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/fx_shadowcreep.webm",
+  "shadowcreep": {
+    "spawn": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/spawn.webm",
+    "idle": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/idle.webm"
+  },
   "slashfrenzy": "modules/duelyst-sprites/assets/fx/fx_slashfrenzy/fx_slashfrenzy.webm",
   "summonlegendary": "modules/duelyst-sprites/assets/fx/fx_summonlegendary/fx_summonlegendary.webm",
   "summonmythron": "modules/duelyst-sprites/assets/fx/fx_summonmythron/fx_summonmythron.webm",
