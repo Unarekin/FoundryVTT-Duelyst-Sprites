@@ -17,7 +17,7 @@
   "bouldersphere": "modules/duelyst-sprites/assets/fx/fx_bouldersphere/fx_bouldersphere.webm",
   "buff": "modules/duelyst-sprites/assets/fx/fx_buff/fx_buff.webm",
   "carddraw": "modules/duelyst-sprites/assets/fx/fx_carddraw/fx_carddraw.webm",
-  "chainlightning": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_chainlightning/chainlightning.webm",
+  "chainlightning": "/modules/duelyst-sprites/assets/fx/fx_chainlightning/chainlightningblue.webm",
   "clawslash": "modules/duelyst-sprites/assets/fx/fx_clawslash/fx_clawslash.webm",
   "cleanse": {
     "burst": "modules/duelyst-sprites/assets/fx/fx_cleanse/burst.webm",
@@ -137,7 +137,7 @@
   "f4_shadowreflection": "modules/duelyst-sprites/assets/fx/fx_f4_shadowreflection/fx_f4_shadowreflection.webm",
   "f4_soulshatterpact": "modules/duelyst-sprites/assets/fx/fx_f4_soulshatterpact/fx_f4_soulshatterpact.webm",
   "f4_voidpulse": "modules/duelyst-sprites/assets/fx/fx_f4_voidpulse/fx_f4_voidpulse.webm",
-  "f4_wraithlingfury": "modules/duelyst-sprites/assets/fx/fx_f4_wraithlingfury/fx_f4_wraithlingfury.webm",
+  "f4_wraithlingfury": "modules/duelyst-sprites/assets/fx/fx_f4_wraithlingfury/wraithlingfury.webm",
   "f5_amplification": "modules/duelyst-sprites/assets/fx/fx_f5_amplification/fx_f5_amplification.webm",
   "f5_bbs_egg": "modules/duelyst-sprites/assets/fx/fx_f5_bbs_egg/fx_f5_bbs_egg.webm",
   "f5_bbs_overload": "modules/duelyst-sprites/assets/fx/fx_f5_bbs_overload/fx_f5_bbs_overload.webm",
@@ -182,7 +182,7 @@
   "multislash_outro": "modules/duelyst-sprites/assets/fx/fx_multislash_outro/fx_multislash_outro.webm",
   "neutral_riddle": "modules/duelyst-sprites/assets/fx/fx_neutral_riddle/fx_neutral_riddle.webm",
   "plasma": {
-    "blue": "/storage/projects/FoundryVTT-Duelyst-Sprites/src/assets/fx/fx_plasma/blueplasma.webm",
+    "blue": "/modules/duelyst-sprites/assets/fx/fx_plasma/blueplasma.webm",
     "vertical": {
       "red": "modules/duelyst-sprites/assets/fx/fx_redplasma_vertical/fx_redplasma_vertical.webm",
       "blue": "modules/duelyst-sprites/assets/fx/fx_blueplasma_vertical/fx_blueplasma_vertical.webm"
@@ -194,7 +194,10 @@
   "roots": "modules/duelyst-sprites/assets/fx/fx_roots/fx_roots.webm",
   "sandportal": "modules/duelyst-sprites/assets/fx/fx_sandportal/fx_sandportal.webm",
   "searingchasm": "modules/duelyst-sprites/assets/fx/fx_searingchasm/fx_searingchasm.webm",
-  "shadowcreep": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/fx_shadowcreep.webm",
+  "shadowcreep": {
+    "spawn": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/spawn.webm",
+    "idle": "modules/duelyst-sprites/assets/fx/fx_shadowcreep/idle.webm"
+  },
   "slashfrenzy": "modules/duelyst-sprites/assets/fx/fx_slashfrenzy/fx_slashfrenzy.webm",
   "summonlegendary": "modules/duelyst-sprites/assets/fx/fx_summonlegendary/fx_summonlegendary.webm",
   "summonmythron": "modules/duelyst-sprites/assets/fx/fx_summonmythron/fx_summonmythron.webm",
