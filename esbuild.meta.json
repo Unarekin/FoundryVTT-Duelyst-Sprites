@@ -49,7 +49,7 @@
       "format": "esm"
     },
     "src/sequencer.json": {
-      "bytes": 23391,
+      "bytes": 23385,
       "imports": [],
       "format": "esm",
       "with": {
@@ -106,7 +106,7 @@
       }
     },
     "src/index.fx.json": {
-      "bytes": 34693,
+      "bytes": 34687,
       "imports": [],
       "format": "esm",
       "with": {
@@ -181,7 +181,7 @@
       "imports": [],
       "exports": [],
       "inputs": {},
-      "bytes": 2135219
+      "bytes": 2135207
     },
     "dist/module.js": {
       "imports": [],
@@ -198,7 +198,7 @@
           "bytesInOutput": 129
         },
         "src/sequencer.json": {
-          "bytesInOutput": 24702
+          "bytesInOutput": 24696
         },
         "src/sequencer.ts": {
           "bytesInOutput": 247
@@ -213,7 +213,7 @@
           "bytesInOutput": 1441770
         },
         "src/index.fx.json": {
-          "bytesInOutput": 39289
+          "bytesInOutput": 39283
         },
         "src/index.factions.json": {
           "bytesInOutput": 1092
@@ -222,7 +222,7 @@
           "bytesInOutput": 606
         }
       },
-      "bytes": 1527116
+      "bytes": 1527104
     },
     "dist/styles/module.css.map": {
       "imports": [],
