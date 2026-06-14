@@ -8,6 +8,13 @@
 
 [![Discord](https://img.shields.io/badge/Discord-%235865F2.svg?&logo=discord&logoColor=white)](https://discord.gg/MdvvxtnCRJ)
 
+# We Have Moved
+This repository has moved to a new site: https://git.gay/unarekin/FoundryVTT-Duelyst-Sprites
+
+Feature requests, bug reports, and other issues should be directed there.
+
+---
+
 # Duelyst Sprites
 
 This module makes using assets from [Duelyst](https://github.com/open-duelyst/duelyst) simple and easy.
